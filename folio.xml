@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+	<channel>
+		<title><![CDATA[Rooc]]></title>
+		<description><![CDATA[Блог веб-разработчика, CSS3, HTML, HTML5, jQuery]]></description>
+		<link>http://rooc.me</link>
+		<lastBuildDate>
+			
+			Sun Aug 10 2014 15:06:51 GMT+0300 (EEST)
+		</lastBuildDate>
+		<atom:link href="http://rooc.me//rss/posts.xml" rel="self" type="application/rss+xml"/>
+		<author><![CDATA[rooc]]></author>
+
+		
+		
+		
+
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+		
+			
+				
+			
+			
+
+		
+		
+		
+			<item>
+				<title>Promkod v.2</title>
+				<link>http://rooc.me/folio/promkod-a.html</link>
+				<description>
+					&lt;p&gt;ПромКод.ру – Новые промо-коды и скидки в интернет-магазинах. Покупай со скидкой!
+				</description>
+				<dc:creator><![CDATA[rooc]]></dc:creator>
+				<pubDate>
+					Mon Feb 10 2014 02:00:00 GMT+0200 (EET)
+				</pubDate>
+			</item>
+			
+		
+			<item>
+				<title>Styletopic v.3</title>
+				<link>http://rooc.me/folio/styletopic-a.html</link>
+				<description>
+					&lt;p&gt;Shopping Guide and Fashion Stores Reviews
+				</description>
+				<dc:creator><![CDATA[rooc]]></dc:creator>
+				<pubDate>
+					Sun Jan 12 2014 02:00:00 GMT+0200 (EET)
+				</pubDate>
+			</item>
+			
+		
+			<item>
+				<title>Travel Planning</title>
+				<link>http://rooc.me/folio/travelplanning.html</link>
+				<description>
+					&lt;p&gt;
+	Верстка для сайта TravelPlanning.fr
+				</description>
+				<dc:creator><![CDATA[rooc]]></dc:creator>
+				<pubDate>
+					Wed Sep 25 2013 03:00:00 GMT+0300 (EEST)
+				</pubDate>
+			</item>
+			
+		
+			<item>
+				<title>DL</title>
+				<link>http://rooc.me/folio/dl.html</link>
+				<description>
+					&lt;p&gt;Начальный шаблон для каталога лекарств
+				</description>
+				<dc:creator><![CDATA[rooc]]></dc:creator>
+				<pubDate>
+					Sat Jun 15 2013 03:00:00 GMT+0300 (EEST)
+				</pubDate>
+			</item>
+			
+		
+			<item>
+				<title>Промкод</title>
+				<link>http://rooc.me/folio/promkod.html</link>
+				<description>
+					&lt;p&gt;ПромКод.ру – Новые промо-коды и скидки в интернет-магазинах. Покупай со скидкой!
+				</description>
+				<dc:creator><![CDATA[rooc]]></dc:creator>
+				<pubDate>
+					Fri May 31 2013 03:00:00 GMT+0300 (EEST)
+				</pubDate>
+			</item>
+			
+		
+	</channel>
+</rss>

@@ -1,0 +1,10 @@
+{
+	"forin": true,
+	"asi": true,
+	"boss": true,
+	"expr": true,
+	"lastsemic": true,
+	"loopfunc": true,
+	"jquery": true,
+	"debug": true
+}

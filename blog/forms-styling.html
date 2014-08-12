@@ -1,0 +1,103 @@
+<!DOCTYPE HTML><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Верстка форм</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="css верстка форм примеры forms html"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/assets/css/styles.css"><script data-main="/assets/js/config" src="/assets/js/vendor/require.js"></script></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/folio/">Портфолио</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div><h1>Верстка форм</h1><div class="meta"><span class="meta-date">Декабрь 29, 2011</span> &nbsp;||&nbsp; <span class="meta-tags"><a href="/tags/css.html">css</a> , <a href="/tags/form.html">form</a></span> &nbsp;||&nbsp; <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="forms-stylung-disqus">комментарии</a></span></div><p>Верстка форм это по сути верстка многоколончатой структуры, но дело усложняется тем что в дизайнерских макетах не часто встретишь строгую сетку и пропорции форм могут меняются даже в рамках одного сайта. </p><h3>Задача</h3><p>Общую конструкцию форм условно можно разделить на две группы – вертикальные и горизонтальные, или лучше – блочные и строчные. Пример блочной формы:</p><p><img src="/assets/img/post/form-1.png" alt="Рис.1 Блочная форма" title="figure caption"></p><p>То есть имя и поле расположены каждый на своей строке.</p><p>Пример строчной формы:</p><p><img src="/assets/img/post/form-2.png" alt="Рис.2 Строчная форма" title="figure caption"></p><p><img src="/assets/img/post/form-3.png" alt="Рис.3 Строчная форма" title="figure caption"></p><p><strong>Задача раз</strong> – часто формы рисуются выровненные по ширине, <code>justified</code>, подобно табличной верстке, и строка может содержать не один label+input а несколько, например:</p><p><img src="/assets/img/post/form-4.png" alt="Рис.4 “Упакованная” форма" title="figure caption"></p><p><strong>Задача два</strong> – как можно видеть на рисунке 4 поле поле может иметь подпись, поэтому надо для этого случая иметь соотвествующую html структуру, иначе говоря колонку, в которую можно положить инпут и подпись.</p><p><strong>Задача три</strong> – <code>label</code> и <code>input</code> не могут иметь заданной раз и навсегда ширины, во первых потому что они могут быть разной ширины в одной форме (Рис. 4), во-вторых дизайнер может запросто нарисовать в одном сайте несколько форм с разной шириной и пропорцией этих элементов. Это неприятно но приходится для каждой формы делать разные конструкции колонок.</p><h3>HTML</h3><p>Для верстки строки формы я выбрал такую HTML конструкцию:</p><h5>Блочная форма</h5><pre><code class="language-markup">&lt;ul class=&quot;field&quot;&gt;
+    &lt;li&gt;&lt;label for=&quot;name&quot;&gt;&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;input type=&quot;text&quot; id=&quot;name&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><h5>Строчная форма</h5><pre><code class="language-markup">&lt;ul class=&quot;field grid&quot;&gt;
+    &lt;li class=&quot;col-4 field-name&quot;&gt;&lt;label for=&quot;pass&quot;&gt;Password&lt;/label&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;input type=&quot;text&quot; placeholder=&quot;&quot; id=&quot;pass&quot; value=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p>Класс <code>grid</code> означает что мы начинаем рисовать колонки. <code>col-4</code> – определяет ширину колонки.</p><h5>Строчная форма “упакованная”</h5><pre><code class="language-markup">&lt;ul class=&quot;field grid packed&quot;&gt;
+    &lt;li class=&quot;col-4 field-name&quot;&gt;&lt;label for=&quot;pass&quot;&gt;Password&lt;/label&gt;&lt;/li&gt;
+    &lt;li class=&quot;col-8&quot;&gt;&lt;input type=&quot;text&quot; placeholder=&quot;&quot; id=&quot;pass&quot; value=&quot;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre><p><code>packed</code> – этот стиль означает что инпуты, селекты и прочее в колонке растягивается на 100%.</p><h5>CSS</h5><pre><code class="language-css">.grid {
+    zoom: 1;margin:0 0 0 -2.083%;list-style:none;
+}
+
+.grid:before,.grid:after {
+    content: &quot;&quot;;display: table;
+}
+
+.grid:after {clear: both;}
+
+.grid&gt;[class^=&quot;col-&quot;]{
+float: left;
+margin:0 0 0 2.083%;
+}
+
+.ie7 .grid&gt;[class^=&quot;col-&quot;]{
+margin:0 0 0 2.079%;
+display: inline;
+}
+
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.col-1{ width:6.25% }
+.col-2{ width:14.583% }
+.col-3{ width:22.917% }
+.col-4{ width:31.25% }
+...
+
+.field.packed input[type=text],
+.field.packed input[type=password],
+.field.packed select,
+.field.packed textarea {
+    width: 100%;
+}
+
+.ie7 .field.packed input[type=text],
+.ie7 .field.packed input[type=password],
+.ie7.field.packed select,
+.ie7 .field.packed textarea {
+    width: auto;
+}</code></pre><p>Я привел только стили принципиальные для построения сетки, остальное в примере.</p><h3>Все плохо</h3><ul><li>очень много разметки и много классов в конечном HTML</li><li>плохо поддается передизайну</li><li>не соответствует точно дизайну</li></ul><p>Много разметки, много классов, и часто можно слышать критику вот таких классов – <code>col-4</code>. Да, конечно, если вдруг надо этот элемент сделать другой ширины то не очень это будет удобно и легко. Но тут вся проблема в адекватном дизайне, если все формы на сайте строго вписываются в сетку то размеры сетки можно перенести в смысловые стили, <code>field-name</code>, <code>field-input</code> например. Но если формы все разные, то есть два варианта – либо так как поступил я, либо надо для каждой формы, отталкиваясь например от названия данной формы строить размеры сетки. Не знаю что лучше, оба варианта не фонтан.</p><p>Дело в том что неинтересно каждую форму на сайте лепить заново новыми размерами, лучше иметь некую абстрактную систему, может слегка перегруженную но в которой любая форма верстается однообразно.</p><p>Другая сложность это выравнивание элементов по вертикали. Ну то есть скажем инпута с именем, чекбокса с именем. Проблема сожалению упирается в багу Firefox, в котором не работает line-height для инпутов. Получается что высоту инпута приходится задавать отступами, а имени высотой строки. Можно было бы все задавать отступами, но тогда не получится добиться выравнивания если имя нужно сделать большим размером шрифта чем инпута.</p><p><a href="http://examples.rooc.me/forms/index.html" title="button">пример</a></p><h3>Twitter Bootstrap</h3><p>Для сравнения решил посмотреть как верстают формы в твиттеровском фреймворке.</p><p><img src="/assets/img/post/form-5.png" alt="Рис.5.Bootstrap, Форма" title="figure caption"></p><p>Html фрагмент одной строки:</p><pre><code class="language-markup">&lt;div class=&quot;control-group&quot;&gt;
+    &lt;label class=&quot;control-label&quot; for=&quot;prependedInput&quot;&gt;Prepended text&lt;/label&gt;
+    &lt;div class=&quot;controls&quot;&gt;
+        &lt;div class=&quot;input-prepend&quot;&gt;
+            &lt;input class=&quot;span2&quot; id=&quot;prependedInput&quot; size=&quot;16&quot; type=&quot;text&quot;&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre><pre><code class="language-css">.form-horizontal .control-group {
+        margin-bottom: 18px;
+}
+
+.form-horizontal .control-label {
+        float: left;
+        width: 140px;
+        padding-top: 5px;
+        text-align: right;
+}
+
+.form-horizontal .controls {
+        margin-left: 160px;
+}
+
+input.span2{
+        width: 130px;
+}</code></pre><p><code>.form-horizontal</code> – определение типа формы, у них их существует несколько. Они рисуют двухколончатую структуру, первая колонка это <code>control-label</code>, вторая <code>controls</code>.</p><p>Не нашел примеров как верстать компоновку типа рис.4</p></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'roocblog';
+	var disqus_identifier = 'forms-stylung-disqus';
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-xspace l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple c-small"><li><a href="/blog/using-svg.html" class="c-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="c-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="c-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="c-link--sidebar">HarpJs</a></li><li><a href="/blog/todos.html" class="c-link--sidebar">Планировщики</a></li><li><a href="/blog/radial-gradient.html" class="c-link--sidebar">Radial Gradient</a></li></ul></div><div class="l-xspace l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags c-small"><li class="list--tags-item--active"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item--active"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-xspace l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple c-small"><li><a href="/posts.xml" class="c-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="c-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика.<br>В вебе с 2000 года, работаю в фирме Телкос. Мне можно <a href="mailto:rooc@mail.ru">написать</a>.</div><div class="l-space">&copy; Rooc 2013 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script type="text/javascript">var disqus_shortname = 'roocblog';
+(function () {
+var s = document.createElement('script'); s.async = true;
+s.type = 'text/javascript';
+s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());</script><script type="text/javascript">var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39747856-1']);
+  _gaq.push(['_setDomainName', 'rooc.me']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();</script></div></body></html>

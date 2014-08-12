@@ -1,0 +1,96 @@
+
+/* Radial Gradient 
+-------------------------------------------------- */
+
+gradients-vendor-prefixes = webkit moz official
+
+/*
+ * Replace the given str with val in the expr.
+ */
+
+replace(expr, str, val)
+  expr = clone(expr)
+  for e, i in expr
+    if length(e) > 1
+      expr[i] = replace(e, str, val)
+    else
+      if str == e
+        expr[i] = val
+  expr
+
+/* Replace new size to old
+  -------------------------------------------------- */  
+
+legacy-size(size, shape)
+	
+	if size is "closest-side" or size is "closest-corner"
+		return contain
+	
+	if size is "farthest-side"
+		if shape is "circle"
+			return cover
+		else
+			return contain
+
+	if size is "farthest-corner"
+		return cover
+
+/* Join colors 
+-------------------------------------------------- */
+
+join-colors(colors)
+	str = join(", ", colors)
+	unquote(str)
+
+/* function 
+-------------------------------------------------- */
+
+radial_gradient(shape=ellipse, size=farthest-side, position=center, colors...)
+
+	prop = current-property[0]
+	val = current-property[1]
+
+	if shape is a 'color'
+		legacy-gradient = '%s, %s' % (shape size)
+		gradient = legacy-gradient
+	
+		if position is a 'color'
+			legacy-gradient = '%s, %s' % (legacy-gradient position)
+			gradient = legacy-gradient
+			if length(colors)
+				for color in colors
+					legacy-gradient = '%s, %s' % (legacy-gradient color)
+					gradient = legacy-gradient
+
+	else if shape is a 'unit'
+		warn("Legacy syntax impossible")
+		push(position, colors)
+		gradient = '%s at %s, %s' % (shape size join-colors(position))
+
+	else
+		if size is a 'color'
+			legacy-gradient = '%s, %s, %s' % (shape size position)
+			gradient = '%s, %s, %s' % (shape size position)
+		else
+			legacy-gradient = '%s, %s %s, %s' % (position shape legacy-size(size, shape) join-colors(colors))
+			
+			if size is 'farthest-corner'
+				gradient = '%s at %s, %s' % (shape position join-colors(colors))
+			else
+				gradient = '%s %s at %s, %s' % (shape size position join-colors(colors))
+
+	if legacy-gradient is defined
+		for prefix in gradients-vendor-prefixes
+			unless prefix == official
+				gradientval = '-%s-radial-gradient(%s)' % (prefix legacy-gradient)   
+				add-property(prop, replace(val, '__CALL__', gradientval))
+	
+	'radial-gradient(%s)' % (gradient)
+
+/* Examples 
+
+background-image: radial_gradient(#FFF, #2574B0)
+background-image: radial_gradient(70px, 80px 40px, #FFF, #2574B0)
+background-image: radial_gradient(circle, #FFF, #2574B0)
+
+-------------------------------------------------- */
