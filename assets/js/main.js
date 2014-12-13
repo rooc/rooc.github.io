@@ -20,7 +20,7 @@ require(["jquery", "vendor/domReady!", "helpers"], function($) {
 		$('img[title*=caption]').each(function() {
 			var $this;
 			$this = $(this);
-			return $this.after("<div class='c-center l-sbox c-small'>" + ($this.attr("alt")) + "</div>");
+			return $this.after("<div class='c-center l-box-s c-small'>" + ($this.attr("alt")) + "</div>");
 		});
 	}
 
@@ -32,11 +32,11 @@ require(["jquery", "vendor/domReady!", "helpers"], function($) {
 
 	if ($('.jsbin-embed').length > 0) {
 		require(["jsbin"]);
-	};
+	}
 
 	if ($('.caniuse').length > 0) {
 		require(["caniuse"]);
-	};
+	}
 
 	if ($('.popup-trigger').length) {
 		require(["plugin/popup"], function() {
