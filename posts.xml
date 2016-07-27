@@ -6,9 +6,9 @@
 		<link>http://rooc.me</link>
 		<lastBuildDate>
 			
-			Wed Jul 27 2016 17:28:17 GMT+0300 (EEST)
+			Wed Jul 27 2016 18:21:27 GMT+0300 (EEST)
 		</lastBuildDate>
-		<atom:link href="http://rooc.me//rss/posts.xml" rel="self" type="application/rss+xml"/>
+		<atom:link href="rooc.github.io/rss/posts.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[rooc]]></author>
 
 		
@@ -164,7 +164,7 @@
 		
 			<item>
 				<title>Модульный CSS и селекторы атрибутов</title>
-				<link>http://rooc.me/blog/attribute-modules.html</link>
+				<link>rooc.github.ioblog/attribute-modules.html</link>
 				<description>
 					&lt;p&gt;Несколько месяцев назад мне попалась &lt;a href=&#34;http://csswizardry.com/2014/05/grouping-related-classes-in-your-markup/&#34;&gt;статья Гарри Робертса&lt;/a&gt; в которой он представил интересную концепцию работы с сопряженными классами в CSS. В этой статье он предложил использовать символы &lt;code&gt;[ ]&lt;/code&gt; для группировки классов для того чтобы быстро распознать их смысл при беглом просмотре. Он приводит данный пример, утверждая что в таком виде декларация стилей становится более &amp;quot;распознавабельной&amp;quot;:&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -356,7 +356,7 @@ header &amp;gt; nav &amp;gt; [class^=&amp;#39;btn&amp;#39;] { /&lt;em&gt; Overri
 		
 			<item>
 				<title>Основы работы с SVG</title>
-				<link>http://rooc.me/blog/using-svg.html</link>
+				<link>rooc.github.ioblog/using-svg.html</link>
 				<description>
 					&lt;p&gt;SVG это формат векторной графики, буквально означающий &lt;strong&gt;Масштабируемая Векторная Графика&lt;/strong&gt;. Собственно это то с чем вы работаете в Иллюстраторе. SVG использовать в вебе довольно просто но тем не менее есть куча того что необходимо знать.&lt;!-- more --&gt;&lt;/p&gt;
 &lt;p&gt;###Зачем это вообще все?&lt;/p&gt;
@@ -572,7 +572,7 @@ header &amp;gt; nav &amp;gt; [class^=&amp;#39;btn&amp;#39;] { /&lt;em&gt; Overri
 		
 			<item>
 				<title>Странный button</title>
-				<link>http://rooc.me/blog/buttons.html</link>
+				<link>rooc.github.ioblog/buttons.html</link>
 				<description>
 					&lt;p&gt;Речь пойдет о верстке кнопок. Когда верстаются кнопки обычно делается несколько модификаций, в том числе модификаций размера. Меня сейчас интересуют изменения отступов при изменении размера шрифта кнопки. Так это делается в бутстрапе:&lt;!-- more --&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.btn {
@@ -606,7 +606,7 @@ header &amp;gt; nav &amp;gt; [class^=&amp;#39;btn&amp;#39;] { /&lt;em&gt; Overri
 		
 			<item>
 				<title>OOCSS. Утилиты</title>
-				<link>http://rooc.me/blog/oocss-utils.html</link>
+				<link>rooc.github.ioblog/oocss-utils.html</link>
 				<description>
 					&lt;p&gt;Обьектно-ориентированный CSS, он же яндексовый метод БЕМ, он же SMACSS, это находка, благодаря которой в верстку пришел порядок. Ну почти. Особенно это очевидно на больших проектах которые переделываются не один раз. Но об этом уже много говорилось, добавить уже нечего. Я хочу рассказать о некоторых проблемах при работе c этой идеологией.&lt;/p&gt;
 &lt;!-- more --&gt;
@@ -627,7 +627,7 @@ header &amp;gt; nav &amp;gt; [class^=&amp;#39;btn&amp;#39;] { /&lt;em&gt; Overri
 		
 			<item>
 				<title>HarpJs</title>
-				<link>http://rooc.me/blog/harpjs.html</link>
+				<link>rooc.github.ioblog/harpjs.html</link>
 				<description>
 					&lt;p&gt;Статические генераторы стали модной темой, их появилось &lt;a href=&#34;http://staticsitegenerators.net/&#34;&gt;много&lt;/a&gt;. Раз в месяц мне попадается статья типа - &lt;a href=&#34;http://joefleming.net/posts/wordpress-out-docpad-in/&#34;&gt;Как я перешел от вордпресса к статике&lt;/a&gt;.&lt;!-- more --&gt;&lt;/p&gt;
 &lt;p&gt;Я начал использовать статические генераторы просто как инструмент для верстки, на этапе превращения дизайнерского макета в статические html, css, js. Эта верстка потом идет дальше к программерам или еще куда. Это удобно потому что у тебя в распоряжении сразу приятные мелочи типа препроцессинг стилей, инклуды. Тот же CoffeeScript например, если вы им пользуетесь. Сначала я пробовал пользоваться для этих целей грантом, но стало не хватать возможностей, типа метаданные для страниц. Хотя это можно каким то боком сделать, скажем, с помощью Jade, но это не так удобно как это бывает в статических генераторах. Возможно я не прав и все это можно сделать при помощи &lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt; или &lt;a href=&#34;http://gulpjs.com/&#34;&gt;Gulp&lt;/a&gt;.&lt;/p&gt;

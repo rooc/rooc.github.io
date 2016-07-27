@@ -1,9 +1,93 @@
-<!DOCTYPE HTML><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Пример верстки на flexbox</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="css3, css, flexbox, examples, примеры"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/assets/css/styles.css"><script data-main="/assets/js/config" src="/assets/js/vendor/require.js"></script></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/folio/">Портфолио</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div><h1>Пример верстки на flexbox</h1><div class="meta"><span class="meta-date">Ноябрь 18, 2012</span> &nbsp;||&nbsp; <span class="meta-tags"><a href="/tags/css.html">css</a> , <a href="/tags/layout.html">layout</a></span> &nbsp;||&nbsp; <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="flexbox-examples-disqus">комментарии</a></span></div><p>До использования флексбокс модели еще далеко но интересно попробовать как она решает типовые проблемы. </p><p>Работает только в Хроме (февраль 2013).</p><p><a href="http://examples.rooc.me/flex-examples/layout-simple.html" title="button">пример</a></p><p>Теперь все фрагменты по очереди.</p><h3>Компоновка</h3><pre><code class="language-html">&lt;div class=&#39;page&#39;&gt;
+<!DOCTYPE HTML>
+<html lang="ru">
+	
+	<head>
+	<meta charset="utf-8">
+	
+		
+	
+	
+	
+	<title>Rooc :: Блог :: Пример верстки на flexbox</title>
+	<meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript">
+	<meta name="keywords" content="css3, css, flexbox, examples, примеры">
+	<meta name="author" content="rooc">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+	<body>
+		<div class="l-header">
+	<div class="l-sitewidth">
+		<a href="/" class="logo">Rooc</a>
+		<nav>
+	<ul class="nav">
+		
+		<li class="nav-item">
+			<a href="/">Блог</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/folio/">Портфолио</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/archive/">Архив</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/links/">Полезное</a>
+		</li>
+		
+	</ul>
+</nav>
+	</div>
+</div>
+		<div class="l-content">
+			<div class="l-sitewidth">
+				<div class="l-article">
+					<div class="l-space">
+						<div class="social">
+	<a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<!-- <a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="icon-font--facebookSquared"></i></a> -->
+</div>
+						<h1>Пример верстки на flexbox</h1>
+						<div class="meta">
+	<span class="meta-date">
+		Ноябрь 18, 2012
+	</span>
+	&nbsp;||&nbsp;
+	<span class="meta-tags">
+		
+			
+			<a href="/tags/css.html">css</a>
+		
+			, 
+			<a href="/tags/layout.html">layout</a>
+		
+	</span>
+	
+	&nbsp;||&nbsp;
+	<span class="meta-comments">
+		<a href="#disqus_thread" data-disqus-identifier="flexbox-examples-disqus">комментарии</a>
+	</span>
+</div>
+						<p>До использования флексбокс модели еще далеко но интересно попробовать как она решает типовые проблемы.
+<!-- more --></p>
+<p>Работает только в Хроме (февраль 2013).</p>
+<p><a href="http://examples.rooc.me/flex-examples/layout-simple.html" title="button">пример</a></p>
+<p>Теперь все фрагменты по очереди.</p>
+<h3>Компоновка</h3><pre><code class="language-html">&lt;div class=&#39;page&#39;&gt;
     &lt;header&gt;&lt;/header&gt;
     &lt;nav&gt;&lt;/nav&gt;
     &lt;div class=&#39;main&#39;&gt;&lt;/div&gt;
     &lt;footer&gt;&lt;/footer&gt;
-&lt;/div&gt;</code></pre><pre><code class="language-css">.page {
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.page {
     width: 976px;
     min-height: 100%;
     margin: auto;
@@ -19,13 +103,21 @@ footer {
 }
 .main {
     flex: 1 0 auto;
-}</code></pre><p>Стили которые не имеют отношения к делу, опускаю. Префиксы тоже.</p><p><code>flex-direction: column;</code> – задается направление “выкладывания” колонок, сверху вниз.<br><code>flex: 0 0 100px;</code> – Шапка и футер фиксированные, не растягиваются и не сжимаются.<br><code>flex: 1 0 auto;</code> – Контент займет все место которое осталось.</p><p>Элемент nav по умолчанию становится флекс-боксом, и дефолтное значение – <code>flex: 0 0 100px;</code>.</p><h3>Навигация</h3><pre><code class="language-css">nav ul {
+}
+</code></pre>
+<p>Стили которые не имеют отношения к делу, опускаю. Префиксы тоже.</p>
+<p><code>flex-direction: column;</code> – задается направление “выкладывания” колонок, сверху вниз.<br><code>flex: 0 0 100px;</code> – Шапка и футер фиксированные, не растягиваются и не сжимаются.<br><code>flex: 1 0 auto;</code> – Контент займет все место которое осталось.  </p>
+<p>Элемент nav по умолчанию становится флекс-боксом, и дефолтное значение – <code>flex: 0 0 100px;</code>.</p>
+<h3>Навигация</h3><pre><code class="language-css">nav ul {
     display: flex;
     justify-content: flex-start;
 }
 nav li {
     flex: 1 0 auto;
-}</code></pre><p>Получаем “табличную” компоновку, каждый пункт меню растягивается и суммарно они заполняют всю ширину.</p><h3>Боковая панель</h3><pre><code class="language-html">&lt;aside&gt;
+}
+</code></pre>
+<p>Получаем “табличную” компоновку, каждый пункт меню растягивается и суммарно они заполняют всю ширину.</p>
+<h3>Боковая панель</h3><pre><code class="language-html">&lt;aside&gt;
     &lt;h4&gt;sidebar&lt;/h4&gt;
     &lt;div class=&#39;sidebar-block&#39;&gt;
         …
@@ -39,13 +131,18 @@ nav li {
     &lt;div class=&#39;sidebar-block&#39;&gt;
         …
     &lt;/div&gt;
-&lt;/aside&gt;</code></pre><pre><code class="language-css">aside {
+&lt;/aside&gt;
+</code></pre>
+<pre><code class="language-css">aside {
     display: flex;
     flex-direction: column;
 }
 .sidebar-block {
     flex: 1 0 auto;
-}</code></pre><p>Блоки в сайдбаре растягиваются по всей высоте сайдбара. Обалдеть.</p><h3>Колонки в контенте</h3><pre><code class="language-html">&lt;div class=&#39;grid&#39;&gt;
+}
+</code></pre>
+<p>Блоки в сайдбаре растягиваются по всей высоте сайдбара. Обалдеть.</p>
+<h3>Колонки в контенте</h3><pre><code class="language-html">&lt;div class=&#39;grid&#39;&gt;
     &lt;div class=&#39;grid-col&#39;&gt;
         …
     &lt;/div&gt;
@@ -55,19 +152,31 @@ nav li {
     &lt;div class=&#39;grid-col&#39;&gt;
         …
     &lt;/div&gt;
-&lt;/div&gt;</code></pre><pre><code class="language-css">.grid {
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">.grid {
     display: flex;
     flex-flow: row nowrap;
 }
 .grid&gt;.grid-col {
     flex: 1 0 0;
-}</code></pre><p>Попробуйте для колонки <code>flex: 1 0 auto;</code> :)</p><h3>Галерея</h3><p>Мне сьела мозг подобная задача когда нужно выстроить блоки которые сами перетекают на новую строку и при этом внутри строки блоки имеют равную высоту. Ну да, javascript. Но с флексбоксом это же счастье.</p><p>HTML код не привожу, все очевидно.</p><pre><code class="language-css">.gallery {
+}
+</code></pre>
+<p>Попробуйте для колонки <code>flex: 1 0 auto;</code>  :)</p>
+<h3>Галерея</h3><p>Мне сьела мозг подобная задача когда нужно выстроить блоки которые сами перетекают на новую строку и при этом внутри строки блоки имеют равную высоту. Ну да, javascript. Но с флексбоксом это же счастье.</p>
+<p>HTML код не привожу, все очевидно.</p>
+<pre><code class="language-css">.gallery {
     display: flex;
     flex-flow: row wrap;
 }
     .gallery-item {
     flex: 0 0 210px;
-}</code></pre><p><code>flex-flow: row wrap</code> , wrap здесь говорит о том что блоки могут падать на новую строку.</p><p><img src="/assets/img/post/fe-gallery.png" alt="Галерея" title="figure caption"></p><h3>Форма</h3><p>Каждая строка формы сверстана списком:</p><pre><code class="language-html">&lt;ul class=&quot;field&quot;&gt;
+}
+</code></pre>
+<p><code>flex-flow: row wrap</code> , wrap здесь говорит о том что блоки могут падать на новую строку.</p>
+<p><img src="/assets/img/post/fe-gallery.png" alt="Галерея" title="figure caption"></p>
+<h3>Форма</h3><p>Каждая строка формы сверстана списком:</p>
+<pre><code class="language-html">&lt;ul class=&quot;field&quot;&gt;
     &lt;li class=&quot;field-name&quot;&gt;
     &lt;label&gt;City&lt;/label&gt;
 &lt;/li&gt;
@@ -83,7 +192,9 @@ nav li {
 &lt;li class=&quot;field-value field-value_small&quot;&gt;
     &lt;input type=&quot;text&quot;&gt;
 &lt;/li&gt;
-&lt;/ul&gt;</code></pre><pre><code class="language-css">.field {
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-css">.field {
     display: flex;
 }
 .field .field-name:first-child {
@@ -97,7 +208,31 @@ nav li {
 }
 .field .field-value_small {
     flex: 1 0 40px;
-}</code></pre><p>Первый элемент в строке фиксированный, <code>flex: 0 0 160px;</code> , чтобы получить первую колонку одинаковую для всех строк.</p><p><code>flex: 5 0 auto;</code> – элементы с инпутами, значение 5 здесь означает что они должны занимать больше места чем наименования поля, как в случае zip.</p><p>Для полей который должны быть поменьше – <code>field-value_small { flex: 1 0 40px;}</code>. Можно было бы контролировать размер инпута атрибутом size в html, но это не самый простой путь.</p><p>Еще раз финальный пример –</p><p><a href="http://examples.rooc.me/flex-examples/layout-simple.html" title="button">пример</a></p><p>Где работает:</p><div class="l-space"><div data-feature="flexbox" class="caniuse"></div></div><h3>По теме:</h3><ul><li><a href="http://dev.opera.com/articles/view/flexbox-basics/">Flexbox — fast track to layout nirvana?</a></li><li><a href="http://weblog.bocoup.com/dive-into-flexbox/">FDive into Flexbox - Bocoup</a></li></ul></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+}
+</code></pre>
+<p>Первый элемент в строке фиксированный,  <code>flex: 0 0 160px;</code> , чтобы получить первую колонку одинаковую для всех строк.</p>
+<p><code>flex: 5 0 auto;</code> – элементы с инпутами, значение 5 здесь означает что они должны занимать больше места чем наименования поля, как в случае zip.</p>
+<p>Для полей который должны быть поменьше – <code>field-value_small { flex: 1 0 40px;}</code>.
+Можно было бы контролировать размер инпута атрибутом size в html, но это не самый простой путь.</p>
+<p>Еще раз финальный пример –</p>
+<p><a href="http://examples.rooc.me/flex-examples/layout-simple.html" title="button">пример</a></p>
+<p>Где работает:</p>
+<div class="l-space">
+    <div data-feature="flexbox" class="caniuse"></div>
+</div>
+
+<h3>По теме:</h3><ul>
+<li><a href="http://dev.opera.com/articles/view/flexbox-basics/">Flexbox — fast track to layout nirvana?</a></li>
+<li><a href="http://weblog.bocoup.com/dive-into-flexbox/">FDive into Flexbox - Bocoup</a></li>
+</ul>
+					</div>
+					
+						<div class="l-space l-box l-line">
+	<div id="disqus_thread"></div>
+</div>
+
+<script>
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	var disqus_shortname = 'roocblog';
 	var disqus_identifier = 'flexbox-examples-disqus';
 
@@ -106,20 +241,449 @@ nav li {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-xspace l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple c-small"><li><a href="/blog/using-svg.html" class="c-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="c-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="c-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="c-link--sidebar">HarpJs</a></li><li><a href="/blog/todos.html" class="c-link--sidebar">Планировщики</a></li><li><a href="/blog/radial-gradient.html" class="c-link--sidebar">Radial Gradient</a></li></ul></div><div class="l-xspace l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags c-small"><li class="list--tags-item--active"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item--active"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-xspace l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple c-small"><li><a href="/posts.xml" class="c-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="c-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика.<br>В вебе с 2000 года, работаю в фирме Телкос. Мне можно <a href="mailto:rooc@mail.ru">написать</a>.</div><div class="l-space">&copy; Rooc 2013 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script type="text/javascript">var disqus_shortname = 'roocblog';
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<a href="http://disqus.com" class="dsq-brlink">
+	comments powered by 
+	<span class="logo-disqus">Disqus</span>
+</a>
+					
+				</div>
+				<div class="l-sidebar">
+					<div class="l-space-l l-box l-line" rel="recent">
+	<h5>Недавно</h5>
+	<ul class="list--simple t-size-s">
+		
+		
+		
+			
+				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
+			
+		
+			
+				<li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li>
+			
+		
+			
+				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
+			
+		
+			
+				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
+			
+		
+			
+				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
+			
+		
+			
+				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
+			
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="tags">
+	<h5>Теги</h5>
+	<ul class="list--tags t-size-s">
+		
+		
+			
+				
+					
+						
+					
+				
+					
+						
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+		<!-- tag listing -->
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+					
+				
+			
+			<li class="list--tags-item--active">
+				<a href="/tags/css.html">css</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/oocss.html">oocss</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/translation.html">translation</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/svg.html">svg</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+					
+				
+			
+			<li class="list--tags-item--active">
+				<a href="/tags/layout.html">layout</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/gradient.html">gradient</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/form.html">form</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/font.html">font</a>
+			</li>
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="rss">
+	<h5>RSS</h5>
+	<ul class="list--simple t-size-s">
+		<li>
+			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
+		</li>
+		<li>
+			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
+		</li>
+	</ul>
+</div>
+
+
+				</div>
+			</div>
+			<div class="l-footer">
+	<div class="l-sitewidth">
+		<div class="l-space l-box l-line">
+			Блог веб разработчика. В вебе с 2000 года.
+			<a href="https://twitter.com/rooczebra/">Twitter</a>
+		</div>
+		<div class="l-space">
+			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
+		</div>
+	</div>
+</div>
+			
+				<script type="text/javascript">
+var disqus_shortname = 'roocblog';
 (function () {
 var s = document.createElement('script'); s.async = true;
 s.type = 'text/javascript';
 s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script><script type="text/javascript">var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39747856-1']);
-  _gaq.push(['_setDomainName', 'rooc.me']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
+}());
+</script>
+				<script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();</script></div></body></html>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-81406656-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+			
+		</div>
+		
+
+		<script src="/assets/js/bundle.js"></script>
+	</body>
+
+</html>

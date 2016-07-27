@@ -1,4 +1,84 @@
-<!DOCTYPE HTML><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Псевдоселектор :target</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="css pseudo target example usage пример"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/assets/css/styles.css"><script data-main="/assets/js/config" src="/assets/js/vendor/require.js"></script></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/folio/">Портфолио</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div><h1>Псевдоселектор :target</h1><div class="meta"><span class="meta-date">Январь 30, 2010</span> &nbsp;||&nbsp; <span class="meta-tags"><a href="/tags/css.html">css</a></span> &nbsp;||&nbsp; <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="target-pseudo-disqus">комментарии</a></span></div><p>Элемент target это элемент с идентификатором (ID) на который мы ссылаемся ссылкой типа – site.com/page.html#id. И псевдокласс <code>:target</code> как раз срабатывает при обращении к этому элементу. К примеру селектор <code>#someid:target</code> сработает когда мы сошлемся на этот элемент – site.com/page.html#someid. </p><p>Три раза переписывал, все равно отстой )</p><p>Этот селектор можно использовать нетипичным способом. Например при обращении к элементу можно его например сдвинуть, спрятать и так далее. Минус в том что если элемент находится внизу страницы документ будет прыгать к нему, все ж таки это так и задумывалось. Но если элемент с которым мы работаем находится вверху страницы то прыгать ничего не будет.</p><p>Короче говоря – <a href="http://examples.rooc.me/target/">пример</a> выдвигающейся панели на этом методе.</p><p>Теперь подробнее.</p><h3>HTML</h3><pre><code class="language-markup">&lt;a class=&quot;info_open&quot; href=&quot;#info&quot;&gt;Open Info&lt;/a&gt;
+<!DOCTYPE HTML>
+<html lang="ru">
+	
+	<head>
+	<meta charset="utf-8">
+	
+		
+	
+	
+	
+	<title>Rooc :: Блог :: Псевдоселектор :target</title>
+	<meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript">
+	<meta name="keywords" content="css pseudo target example usage пример">
+	<meta name="author" content="rooc">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+	<body>
+		<div class="l-header">
+	<div class="l-sitewidth">
+		<a href="/" class="logo">Rooc</a>
+		<nav>
+	<ul class="nav">
+		
+		<li class="nav-item">
+			<a href="/">Блог</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/folio/">Портфолио</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/archive/">Архив</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/links/">Полезное</a>
+		</li>
+		
+	</ul>
+</nav>
+	</div>
+</div>
+		<div class="l-content">
+			<div class="l-sitewidth">
+				<div class="l-article">
+					<div class="l-space">
+						<div class="social">
+	<a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<!-- <a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="icon-font--facebookSquared"></i></a> -->
+</div>
+						<h1>Псевдоселектор :target</h1>
+						<div class="meta">
+	<span class="meta-date">
+		Январь 30, 2010
+	</span>
+	&nbsp;||&nbsp;
+	<span class="meta-tags">
+		
+			
+			<a href="/tags/css.html">css</a>
+		
+	</span>
+	
+	&nbsp;||&nbsp;
+	<span class="meta-comments">
+		<a href="#disqus_thread" data-disqus-identifier="target-pseudo-disqus">комментарии</a>
+	</span>
+</div>
+						<p>Элемент target это элемент с идентификатором (ID) на который мы ссылаемся ссылкой типа – site.com/page.html#id. И псевдокласс <code>:target</code> как раз срабатывает при обращении к этому элементу. К примеру селектор <code>#someid:target</code> сработает когда мы сошлемся на этот элемент – site.com/page.html#someid.
+<!-- more --></p>
+<p>Три раза переписывал, все равно отстой )</p>
+<p>Этот селектор можно использовать нетипичным способом. Например при обращении к элементу можно его например сдвинуть, спрятать и так далее. Минус в том что если элемент находится внизу страницы документ будет прыгать к нему, все ж таки это так и задумывалось. Но если элемент с которым мы работаем находится вверху страницы то прыгать ничего не будет.</p>
+<p>Короче говоря – <a href="http://examples.rooc.me/target/">пример</a> выдвигающейся панели на этом методе.</p>
+<p>Теперь подробнее.</p>
+<h3>HTML</h3><pre><code class="language-markup">&lt;a class=&quot;info_open&quot; href=&quot;#info&quot;&gt;Open Info&lt;/a&gt;
 &lt;div class=&quot;info&quot; id=&quot;info&quot;&gt;
     &lt;div class=&quot;panel&quot;&gt;
         …
@@ -6,17 +86,47 @@
     &lt;/div&gt;
 &lt;div class=&quot;content&quot;&gt;
     …
-&lt;/div&gt;</code></pre><p>Div который скрывается/показывается – это <code>div#info</code>.</p><h3>CSS</h3><p>Начальные стили этого блока:</p><pre><code class="language-css">.info {
+&lt;/div&gt;
+</code></pre>
+<p>Div который скрывается/показывается – это <code>div#info</code>.</p>
+<h3>CSS</h3><p>Начальные стили этого блока:</p>
+<pre><code class="language-css">.info {
     width: 600px;
     margin: auto;
     height: 208px;
     position: absolute;
     top: -250px;
     z-index: 1000;
-}</code></pre><p>Благодаря отрицательному top этот блок не виден изначально. Ссылка <code>a.info_open</code> обращается к этому диву <code>(href=”#info”)</code> и срабатывает псевдоселектор.</p><pre><code class="language-css">.info:target {
+}
+</code></pre>
+<p>Благодаря отрицательному top этот блок не виден изначально. Ссылка <code>a.info_open</code> обращается к этому диву <code>(href=”#info”)</code> и срабатывает псевдоселектор.</p>
+<pre><code class="language-css">.info:target {
     position: relative;
     top: 0px;
-}</code></pre><p><code>top: 0px</code> сдвигает блок и он становится видимым, а <code>position: relative</code> нужен чтобы участвовать в потоке и сдвинуть контент.</p><p><img src="/assets/img/post/target-1.png" alt="target"></p><p>Ну и чтобы закрыть панель нужно убрать обращение к элементу – ссылка <code>a.close_info</code>. Кнопка <code>a.open_info</code> спозиционирована абсолютно поэтому при появлении <code>div.info</code> она просто перекрывается им.</p><h3>IE</h3><p>Для IE это все работает благодаря скрипту <a href="http://novemberborn.net/2005/04/javascriptimplementing-target-in-ie-15&quot;">target.js от Mark Wubben</a>, который имитирует поведение псевдоселектора.</p><p><a href="http://examples.rooc.me/target/index.html" title="button">пример</a></p><h5>По теме:</h5><ul><li><a href="http://www.cssplay.co.uk/menus/pull-down-info-panel.html">CSSPlay: Pull Down Information Panel</a></li><li><a href="https://developer.mozilla.org/en/CSS/:target">MDN :target</a></li><li><a href="http://www.css3.info/making-an-image-gallery-with-target/">CSS3.info: Making an image gallery with :target</a></li></ul><p>Где работает:</p><div class="l-space"><div class="caniuse" data-feature="css-sel3"></div></div></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+}
+</code></pre>
+<p><code>top: 0px</code> сдвигает блок и он становится видимым, а <code>position: relative</code> нужен чтобы участвовать в потоке и сдвинуть контент.</p>
+<p><img src="/assets/img/post/target-1.png" alt="target"></p>
+<p>Ну и чтобы закрыть панель нужно убрать обращение к элементу – ссылка <code>a.close_info</code>. Кнопка <code>a.open_info</code> спозиционирована абсолютно поэтому при появлении <code>div.info</code> она просто перекрывается им.</p>
+<h3>IE</h3><p>Для IE это все работает благодаря скрипту <a href="http://novemberborn.net/2005/04/javascriptimplementing-target-in-ie-15&quot;">target.js от Mark Wubben</a>, который имитирует поведение псевдоселектора.</p>
+<p><a href="http://examples.rooc.me/target/index.html" title="button">пример</a> </p>
+<h5>По теме:</h5><ul>
+<li><a href="http://www.cssplay.co.uk/menus/pull-down-info-panel.html">CSSPlay: Pull Down Information Panel</a> </li>
+<li><a href="https://developer.mozilla.org/en/CSS/:target">MDN :target</a></li>
+<li><a href="http://www.css3.info/making-an-image-gallery-with-target/">CSS3.info: Making an image gallery with :target</a></li>
+</ul>
+<p>Где работает:</p>
+<div class="l-space">
+    <div class="caniuse" data-feature="css-sel3"></div>
+</div>
+					</div>
+					
+						<div class="l-space l-box l-line">
+	<div id="disqus_thread"></div>
+</div>
+
+<script>
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	var disqus_shortname = 'roocblog';
 	var disqus_identifier = 'target-pseudo-disqus';
 
@@ -25,20 +135,447 @@
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-xspace l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple c-small"><li><a href="/blog/using-svg.html" class="c-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="c-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="c-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="c-link--sidebar">HarpJs</a></li><li><a href="/blog/todos.html" class="c-link--sidebar">Планировщики</a></li><li><a href="/blog/radial-gradient.html" class="c-link--sidebar">Radial Gradient</a></li></ul></div><div class="l-xspace l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags c-small"><li class="list--tags-item--active"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-xspace l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple c-small"><li><a href="/posts.xml" class="c-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="c-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика.<br>В вебе с 2000 года, работаю в фирме Телкос. Мне можно <a href="mailto:rooc@mail.ru">написать</a>.</div><div class="l-space">&copy; Rooc 2013 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script type="text/javascript">var disqus_shortname = 'roocblog';
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<a href="http://disqus.com" class="dsq-brlink">
+	comments powered by 
+	<span class="logo-disqus">Disqus</span>
+</a>
+					
+				</div>
+				<div class="l-sidebar">
+					<div class="l-space-l l-box l-line" rel="recent">
+	<h5>Недавно</h5>
+	<ul class="list--simple t-size-s">
+		
+		
+		
+			
+				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
+			
+		
+			
+				<li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li>
+			
+		
+			
+				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
+			
+		
+			
+				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
+			
+		
+			
+				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
+			
+		
+			
+				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
+			
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="tags">
+	<h5>Теги</h5>
+	<ul class="list--tags t-size-s">
+		
+		
+			
+				
+					
+						
+					
+				
+					
+						
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+		<!-- tag listing -->
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+					
+				
+			
+			<li class="list--tags-item--active">
+				<a href="/tags/css.html">css</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/oocss.html">oocss</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/translation.html">translation</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/svg.html">svg</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/layout.html">layout</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/gradient.html">gradient</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/form.html">form</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/font.html">font</a>
+			</li>
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="rss">
+	<h5>RSS</h5>
+	<ul class="list--simple t-size-s">
+		<li>
+			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
+		</li>
+		<li>
+			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
+		</li>
+	</ul>
+</div>
+
+
+				</div>
+			</div>
+			<div class="l-footer">
+	<div class="l-sitewidth">
+		<div class="l-space l-box l-line">
+			Блог веб разработчика. В вебе с 2000 года.
+			<a href="https://twitter.com/rooczebra/">Twitter</a>
+		</div>
+		<div class="l-space">
+			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
+		</div>
+	</div>
+</div>
+			
+				<script type="text/javascript">
+var disqus_shortname = 'roocblog';
 (function () {
 var s = document.createElement('script'); s.async = true;
 s.type = 'text/javascript';
 s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script><script type="text/javascript">var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39747856-1']);
-  _gaq.push(['_setDomainName', 'rooc.me']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
+}());
+</script>
+				<script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();</script></div></body></html>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-81406656-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+			
+		</div>
+		
+
+		<script src="/assets/js/bundle.js"></script>
+	</body>
+
+</html>

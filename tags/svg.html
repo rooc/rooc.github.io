@@ -1,11 +1,567 @@
-<!DOCTYPE HTML><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Tag :: SVG</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="CSS3, HTML, HTML5, верстка, Javascript, OOCSS"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/assets/css/styles.css"><script data-main="/assets/js/config" src="/assets/js/vendor/require.js"></script></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/folio/">Портфолио</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><h1>Посты с тегом &quot;svg&quot;</h1><div class="l-space"><h4><a href="../blog/using-svg.html" class="c-link">Основы работы с SVG</a></h4><p></p><p>SVG это формат векторной графики, буквально означающий <strong>Масштабируемая Векторная Графика</strong>. Собственно это то с чем вы работаете в Иллюстраторе. SVG использовать в вебе довольно просто но тем не менее есть куча того что необходимо знать. &nbsp; <a href="/blog/../blog/using-svg.html" class="c-link">...</a></p></div></div></div><div class="l-sidebar"><div class="l-xspace l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple c-small"><li><a href="/blog/using-svg.html" class="c-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="c-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="c-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="c-link--sidebar">HarpJs</a></li><li><a href="/blog/todos.html" class="c-link--sidebar">Планировщики</a></li><li><a href="/blog/radial-gradient.html" class="c-link--sidebar">Radial Gradient</a></li></ul></div><div class="l-xspace l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags c-small"><li class="list--tags-item"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-xspace l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple c-small"><li><a href="/posts.xml" class="c-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="c-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика.<br>В вебе с 2000 года, работаю в фирме Телкос. Мне можно <a href="mailto:rooc@mail.ru">написать</a>.</div><div class="l-space">&copy; Rooc 2013 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script type="text/javascript">var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39747856-1']);
-  _gaq.push(['_setDomainName', 'rooc.me']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
+<!DOCTYPE HTML>
+<html lang="ru">
+	
+	<head>
+	<meta charset="utf-8">
+	
+	
+		
+	
+	
+	<title>Rooc :: Tag :: SVG</title>
+	<meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript">
+	<meta name="keywords" content="CSS3, HTML, HTML5, верстка, Javascript, OOCSS">
+	<meta name="author" content="rooc">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();</script></div></body></html>
+	<body>
+		<div class="l-header">
+	<div class="l-sitewidth">
+		<a href="/" class="logo">Rooc</a>
+		<nav>
+	<ul class="nav">
+		
+		<li class="nav-item">
+			<a href="/">Блог</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/folio/">Портфолио</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/archive/">Архив</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/links/">Полезное</a>
+		</li>
+		
+	</ul>
+</nav>
+	</div>
+</div>
+		<div class="l-content">
+			<div class="l-sitewidth">
+				<div class="l-article">
+					<div class="l-space">
+						
+						
+						
+							
+							
+							
+						
+						
+							
+								
+							
+						
+							
+								
+									
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+						
+							
+								
+							
+							
+						
+						
+						<h1>Посты с тегом  &#34;svg&#34;</h1>
+						
+							<div class="l-space">
+								<h3>
+									<a href="../blog/using-svg.html" class="t-link">Основы работы с SVG</a>
+								</h3>
+								<p>
+									
+									
+									
+									<p>SVG это формат векторной графики, буквально означающий <strong>Масштабируемая Векторная Графика</strong>. Собственно это то с чем вы работаете в Иллюстраторе. SVG использовать в вебе довольно просто но тем не менее есть куча того что необходимо знать.
+									&nbsp;
+									<a href="/blog/../blog/using-svg.html" class="t-link">...</a>
+								</p>
+							</div>
+						
+					</div>
+				</div>
+				<div class="l-sidebar">
+					<div class="l-space-l l-box l-line" rel="recent">
+	<h5>Недавно</h5>
+	<ul class="list--simple t-size-s">
+		
+		
+		
+			
+				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
+			
+		
+			
+				<li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li>
+			
+		
+			
+				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
+			
+		
+			
+				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
+			
+		
+			
+				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
+			
+		
+			
+				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
+			
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="tags">
+	<h5>Теги</h5>
+	<ul class="list--tags t-size-s">
+		
+		
+			
+				
+					
+						
+					
+				
+					
+						
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+		<!-- tag listing -->
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/css.html">css</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/oocss.html">oocss</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/translation.html">translation</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/svg.html">svg</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/layout.html">layout</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/gradient.html">gradient</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/form.html">form</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			
+			
+			
+			<li class="list--tags-item">
+				<a href="/tags/font.html">font</a>
+			</li>
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="rss">
+	<h5>RSS</h5>
+	<ul class="list--simple t-size-s">
+		<li>
+			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
+		</li>
+		<li>
+			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
+		</li>
+	</ul>
+</div>
+
+
+				</div>
+			</div>
+			<div class="l-footer">
+	<div class="l-sitewidth">
+		<div class="l-space l-box l-line">
+			Блог веб разработчика. В вебе с 2000 года.
+			<a href="https://twitter.com/rooczebra/">Twitter</a>
+		</div>
+		<div class="l-space">
+			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
+		</div>
+	</div>
+</div>
+			<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-81406656-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+		</div>
+		
+
+		<script src="/assets/js/bundle.js"></script>
+	</body>
+
+</html>

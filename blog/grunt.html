@@ -1,6 +1,99 @@
-<!DOCTYPE HTML><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Как я использую Gruntjs</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="gruntjs front end верстка компиляция stylus jade coffescript"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/assets/css/styles.css"><script data-main="/assets/js/config" src="/assets/js/vendor/require.js"></script></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/folio/">Портфолио</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div><h1>Как я использую Gruntjs</h1><div class="meta"><span class="meta-date">Апрель 07, 2013</span> &nbsp;||&nbsp; <span class="meta-tags"><a href="/tags/kak-to-tak.html">kak-to-tak</a></span> &nbsp;||&nbsp; <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="grunt-disqus">комментарии</a></span></div><p>Если вы верстальщик и ни дай бог пользуетесь CSS препроцессором, например как я, <a href="http://learnboost.github.io/stylus/&quot;">Stylus</a>, то встает вопрос как поудобнее компилировать css. Хотя речь не только о препроцессорах для css, я например, пользуюсь иногда <a href="http://jade-lang.com">Jade</a>, иногда Coffescript. </p><p>Способов много, я верстаю в Sublime Text, и первым делом пытался настроить компиляцию прямо в редакторе. В sublime для этого есть <a href="http://docs.sublimetext.info/en/latest/file_processing/build_systems.html">Build Systems</a>. Все хорошо, но не идеально. Иногда нужно чтобы при изменении одного файла процессился другой и тому подобное.</p><p>Когда я понял что внутри sublime у меня не получается решить задачу я попытался найти какой то другой способ. Может программулину какую. И тут не все хорошо. Для Мака есть <a href="http://incident57.com/codekit/">Codekit</a>, который скопом решает кучу таких задач. Есть <a href="http://livereload.com/">Livereload</a>, но он в альфа-бете-чтонибудь-не-работает годами. Для Less есть куча отличных решений – <a href="http://wearekiss.com/simpless&quot;">SimpLESS</a>, <a href="http://winless.org/">WinLess</a>. Не искал но думаю для Sass есть хорошие решения виндовые, а вот для Stylus нет, ну или не нашел.</p><p>Не так давно появился некто <a href="http://mixture.io/">mixture</a>, о котором ничего сказать не могу, смутило только то что там по умолчанию предлагается темплейтный движок Liquid, которого я не знаю и не очень надо.</p><p>Поэтому я остановился на Gruntjs. Я не спец по JS, не спец по nodejs, для меня работа с командной строкой ассоциируется с Аристотелем или еще чем то более древним и ненужным ) Но по всему было похоже что gruntjs позволяет решать все задачи как я хочу.</p><p>А что собственно за задачи? Задачи такие:</p><ul><li>Компилить stylus, jade, coffescript при изменении</li><li>Позволять задавать пути исходников и конечных файлов как мне заблагорассудится</li><li>Желательно при измении определенных файлов рефрешить браузер</li></ul><p>Второй пункт важный потому что иногда приходится брать готовый проект с уже заданной структурой папок.</p><p>Я не буду описывать <a href="http://gruntjs.com/getting-started">как инсталлировать gruntjs</a>, а приведу пример как я его настроил для себя. Тем более что я особо и не понимаю, я всего лишь прочел пошаговую инструкцию )</p><p>Мой <a href="https://github.com/rooc/gruntweb">темплейт проекта под GruntJs</a>. Предполагаю что уже установлен nodejs и grunt. Для старта вам нужно всего два файла, <code>package.json</code> и <code>Gruntfile.js</code></p><p>Я опускаю все детали содержимого Gruntfile.js, только то, что нужно для настройки. Запись вида</p><pre><code class="language-javascript">jshint: {
+<!DOCTYPE HTML>
+<html lang="ru">
+	
+	<head>
+	<meta charset="utf-8">
+	
+		
+	
+	
+	
+	<title>Rooc :: Блог :: Как я использую Gruntjs</title>
+	<meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript">
+	<meta name="keywords" content="gruntjs front end верстка компиляция stylus jade coffescript">
+	<meta name="author" content="rooc">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+	<body>
+		<div class="l-header">
+	<div class="l-sitewidth">
+		<a href="/" class="logo">Rooc</a>
+		<nav>
+	<ul class="nav">
+		
+		<li class="nav-item">
+			<a href="/">Блог</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/folio/">Портфолио</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/archive/">Архив</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/links/">Полезное</a>
+		</li>
+		
+	</ul>
+</nav>
+	</div>
+</div>
+		<div class="l-content">
+			<div class="l-sitewidth">
+				<div class="l-article">
+					<div class="l-space">
+						<div class="social">
+	<a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<!-- <a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="icon-font--facebookSquared"></i></a> -->
+</div>
+						<h1>Как я использую Gruntjs</h1>
+						<div class="meta">
+	<span class="meta-date">
+		Апрель 07, 2013
+	</span>
+	&nbsp;||&nbsp;
+	<span class="meta-tags">
+		
+			
+			<a href="/tags/kak-to-tak.html">kak-to-tak</a>
+		
+	</span>
+	
+	&nbsp;||&nbsp;
+	<span class="meta-comments">
+		<a href="#disqus_thread" data-disqus-identifier="grunt-disqus">комментарии</a>
+	</span>
+</div>
+						<p>Если вы верстальщик и ни дай бог пользуетесь CSS препроцессором, например как я, <a href="http://learnboost.github.io/stylus/&quot;">Stylus</a>, то встает вопрос как поудобнее компилировать css. Хотя речь не только о препроцессорах для css, я например, пользуюсь иногда <a href="http://jade-lang.com">Jade</a>, иногда Coffescript.
+<!-- more --></p>
+<p>Способов много, я верстаю в Sublime Text, и первым делом пытался настроить компиляцию прямо в редакторе. В sublime для этого есть <a href="http://docs.sublimetext.info/en/latest/file_processing/build_systems.html">Build Systems</a>. Все хорошо, но не идеально. Иногда нужно чтобы при изменении одного файла процессился другой и тому подобное.</p>
+<p>Когда я понял что внутри sublime у меня не получается решить задачу я попытался найти какой то другой способ. Может программулину какую. И тут не все хорошо. Для Мака есть <a href="http://incident57.com/codekit/">Codekit</a>, который скопом решает кучу таких задач. Есть <a href="http://livereload.com/">Livereload</a>, но он в альфа-бете-чтонибудь-не-работает годами. Для Less есть куча отличных решений – <a href="http://wearekiss.com/simpless&quot;">SimpLESS</a>, <a href="http://winless.org/">WinLess</a>. Не искал но думаю для Sass есть хорошие решения виндовые, а вот для Stylus нет, ну или не нашел.</p>
+<p>Не так давно появился некто <a href="http://mixture.io/">mixture</a>, о котором ничего сказать не могу, смутило только то что там по умолчанию предлагается темплейтный движок Liquid, которого я не знаю и не очень надо.</p>
+<p>Поэтому я остановился на Gruntjs. Я не спец по JS, не спец по nodejs, для меня работа с командной строкой ассоциируется с Аристотелем или еще чем то более древним и ненужным ) Но по всему было похоже что gruntjs позволяет решать все задачи как я хочу.</p>
+<p>А что собственно за задачи? Задачи такие:</p>
+<ul>
+<li>Компилить stylus, jade, coffescript при изменении</li>
+<li>Позволять задавать пути исходников и конечных файлов как мне заблагорассудится</li>
+<li>Желательно при измении определенных файлов рефрешить браузер</li>
+</ul>
+<p>Второй пункт важный потому что иногда приходится брать готовый проект с уже заданной структурой папок.</p>
+<p>Я не буду описывать <a href="http://gruntjs.com/getting-started">как инсталлировать gruntjs</a>, а приведу пример как я его настроил для себя. Тем более что я особо и не понимаю, я всего лишь прочел пошаговую инструкцию )</p>
+<p>Мой <a href="https://github.com/rooc/gruntweb">темплейт проекта под GruntJs</a>. Предполагаю что уже установлен nodejs и grunt. Для старта вам нужно всего два файла, <code>package.json</code> и   <code>Gruntfile.js</code></p>
+<p>Я опускаю все детали содержимого Gruntfile.js, только то, что нужно для настройки. Запись вида</p>
+<pre><code class="language-javascript">jshint: {
     …
-},</code></pre><p>p означает что это таск с названием jshint и делает то что описано в обьекте.</p><h3>jshint</h3><pre><code class="language-javascript">jshint: {
+},
+</code></pre>
+<p>p означает что это таск с названием jshint и делает то что описано в обьекте.</p>
+<h3>jshint</h3><pre><code class="language-javascript">jshint: {
     files: [&#39;gruntfile.js&#39;],
         options: {
         // options here to override JSHint defaults
@@ -11,7 +104,10 @@
             document: true
         }
     }
-},</code></pre><p>Этот таск проверяет файл gruntfile.js на ошибки, очень полезно от кривых рук.</p><h3>jade</h3><pre><code class="language-javascript">jade: {
+},
+</code></pre>
+<p>Этот таск проверяет файл gruntfile.js на ошибки, очень полезно от кривых рук.</p>
+<h3>jade</h3><pre><code class="language-javascript">jade: {
     work: {
         options: {
             pretty: true
@@ -29,7 +125,10 @@
             &quot;public/about.html&quot;: [&quot;source/about.jade&quot;]
         }
     }
-},</code></pre><p>Компиляция Jade, два подтаска (jade:work, jade:all) для компиляции конкретного файла над которым работаешь в данный момент, и для компиляции всех файлов в проекте. Это нужно когда вы изменили общий инклуд, например шапку или футер. files – пути для исходников и результата.</p><h3>stylus</h3><pre><code class="language-javascript">stylus: {
+},
+</code></pre>
+<p>Компиляция Jade, два подтаска (jade:work, jade:all) для компиляции конкретного файла над которым работаешь в данный момент, и для компиляции всех файлов в проекте. Это нужно когда вы изменили общий инклуд, например шапку или футер. files – пути для исходников и результата.</p>
+<h3>stylus</h3><pre><code class="language-javascript">stylus: {
     compile: {
         options: {
             compress: false,
@@ -44,7 +143,9 @@
             &#39;public/css/styles.css&#39;: &#39;source/css/index.styl&#39;
         }
     }
-},</code></pre><h3>coffee</h3><pre><code class="language-javascript">coffee: {
+},
+</code></pre>
+<h3>coffee</h3><pre><code class="language-javascript">coffee: {
     compile: {
         options: {
             bare: true
@@ -54,7 +155,10 @@
             &#39;path/plugins.js&#39;: [&#39;path/to/sources/*.coffee&#39;, &#39;path/to/more/*.coffee&#39;]
         }
     }
-},</code></pre><p>Процессинг кофескрипта, позволяет обьединять при процессинге.</p><h3>watch</h3><pre><code class="language-javascript">watch: {
+},
+</code></pre>
+<p>Процессинг кофескрипта, позволяет обьединять при процессинге.</p>
+<h3>watch</h3><pre><code class="language-javascript">watch: {
     scripts: {
         files: ‘source/js/**/*.coffee’,
         tasks: [&#39;coffee&#39;],
@@ -83,12 +187,18 @@
             debounceDelay: 250
         }
     }
-},</code></pre><p>Таск “слежения” за файлами. Например watch:stylus – при изменении любых файлов stylus в папке source/css/ выполняется таск stylus.</p><h3>livereload</h3><pre><code class="language-javascript">livereload: {
+},
+</code></pre>
+<p>Таск “слежения” за файлами. Например watch:stylus – при изменении любых файлов stylus в папке source/css/ выполняется таск stylus.</p>
+<h3>livereload</h3><pre><code class="language-javascript">livereload: {
     options: {
         base: ‘public’
     },
     files: [&#39;public/**/*&#39;]
-},</code></pre><p>Рефреш браузера когда меняются файлы, для Хрома должен быть установлен плагин <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">livereload</a> <code>base</code> – корень сайта, <code>files</code> – файлы которые должны инициировать рефреш.</p><h3>connect</h3><pre><code class="language-javascript">connect: {
+},
+</code></pre>
+<p>Рефреш браузера когда меняются файлы, для Хрома должен быть установлен плагин <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">livereload</a> <code>base</code> – корень сайта, <code>files</code> – файлы которые должны инициировать рефреш.</p>
+<h3>connect</h3><pre><code class="language-javascript">connect: {
     server: {
         options: {
             hostname: ‘localhost’,
@@ -96,7 +206,32 @@
             base: ‘public/’
         }
     }
-}</code></pre><p>Вебсервер который запускается в папке проекта, для удобства работы. Хост и порт можно настроить какой угодно.</p><h3>Регистрация таска</h3><pre><code class="language-javascript">grunt.registerTask(‘default’, [&#39;jshint&#39;, &#39;connect&#39;, &#39;livereload&#39;,&#39;watch&#39;]);</code></pre><p>Дефолтный таск запускается по дефолту при запуске gruntjs, можно создать любой другой набор тасков по такой же схеме.</p><h3>Поехали</h3><p>Теперь в папке проекта выполняем <code>grunt.cmd</code>(для винды, для линукса просто grunt). И вкалываем.</p><p>Если все прошло без ошибок то после запуска cmd будет выглядеть так:</p><figure><img class="popup-trigger" src="/assets/img/post/grunt-cmd.thumb_post.png" alt="grunt-cmd" data-pop-type="image" data-pop-content="/assets/img/post/grunt-cmd.png"><figcaption>grunt-cmd</figcaption></figure><p><a href="https://github.com/rooc/gruntweb">Github</a></p><h5>По теме:</h5><ul><li><a href="http://gruntjs.com/">Gruntjs</a></li><li><a href="http://habrahabr.ru/company/yandex/blog/169415/">Почему мы стали использовать препроцессор Stylus в Яндекс.Почте, а также о библиотеке, помогающей жить с IE</a></li></ul></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+}
+</code></pre>
+<p>Вебсервер который запускается в папке проекта, для удобства работы. Хост и порт можно настроить какой угодно.</p>
+<h3>Регистрация таска</h3><pre><code class="language-javascript">grunt.registerTask(‘default’, [&#39;jshint&#39;, &#39;connect&#39;, &#39;livereload&#39;,&#39;watch&#39;]);
+</code></pre>
+<p>Дефолтный таск запускается по дефолту при запуске gruntjs, можно создать любой другой набор тасков по такой же схеме.</p>
+<h3>Поехали</h3><p>Теперь в папке проекта выполняем <code>grunt.cmd</code>(для винды, для линукса просто grunt). И вкалываем.</p>
+<p>Если все прошло без ошибок то после запуска cmd будет выглядеть так:</p>
+<figure>
+    <img class="popup-trigger" src="/assets/img/post/grunt-cmd.thumb_post.png" alt="grunt-cmd" data-pop-type="image" data-pop-content="/assets/img/post/grunt-cmd.png">
+    <figcaption>grunt-cmd</figcaption>
+</figure>
+
+<p><a href="https://github.com/rooc/gruntweb">Github</a></p>
+<h5>По теме:</h5><ul>
+<li><a href="http://gruntjs.com/">Gruntjs</a></li>
+<li><a href="http://habrahabr.ru/company/yandex/blog/169415/">Почему мы стали использовать препроцессор Stylus в Яндекс.Почте, а также о библиотеке, помогающей жить с IE</a></li>
+</ul>
+					</div>
+					
+						<div class="l-space l-box l-line">
+	<div id="disqus_thread"></div>
+</div>
+
+<script>
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	var disqus_shortname = 'roocblog';
 	var disqus_identifier = 'grunt-disqus';
 
@@ -105,20 +240,447 @@
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-xspace l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple c-small"><li><a href="/blog/using-svg.html" class="c-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="c-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="c-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="c-link--sidebar">HarpJs</a></li><li><a href="/blog/todos.html" class="c-link--sidebar">Планировщики</a></li><li><a href="/blog/radial-gradient.html" class="c-link--sidebar">Radial Gradient</a></li></ul></div><div class="l-xspace l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags c-small"><li class="list--tags-item"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item--active"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-xspace l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple c-small"><li><a href="/posts.xml" class="c-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="c-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика.<br>В вебе с 2000 года, работаю в фирме Телкос. Мне можно <a href="mailto:rooc@mail.ru">написать</a>.</div><div class="l-space">&copy; Rooc 2013 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script type="text/javascript">var disqus_shortname = 'roocblog';
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<a href="http://disqus.com" class="dsq-brlink">
+	comments powered by 
+	<span class="logo-disqus">Disqus</span>
+</a>
+					
+				</div>
+				<div class="l-sidebar">
+					<div class="l-space-l l-box l-line" rel="recent">
+	<h5>Недавно</h5>
+	<ul class="list--simple t-size-s">
+		
+		
+		
+			
+				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
+			
+		
+			
+				<li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li>
+			
+		
+			
+				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
+			
+		
+			
+				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
+			
+		
+			
+				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
+			
+		
+			
+				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
+			
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="tags">
+	<h5>Теги</h5>
+	<ul class="list--tags t-size-s">
+		
+		
+			
+				
+					
+						
+					
+				
+					
+						
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+		<!-- tag listing -->
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/css.html">css</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/oocss.html">oocss</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/translation.html">translation</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/svg.html">svg</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/layout.html">layout</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+					
+				
+			
+			<li class="list--tags-item--active">
+				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/gradient.html">gradient</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/form.html">form</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/font.html">font</a>
+			</li>
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="rss">
+	<h5>RSS</h5>
+	<ul class="list--simple t-size-s">
+		<li>
+			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
+		</li>
+		<li>
+			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
+		</li>
+	</ul>
+</div>
+
+
+				</div>
+			</div>
+			<div class="l-footer">
+	<div class="l-sitewidth">
+		<div class="l-space l-box l-line">
+			Блог веб разработчика. В вебе с 2000 года.
+			<a href="https://twitter.com/rooczebra/">Twitter</a>
+		</div>
+		<div class="l-space">
+			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
+		</div>
+	</div>
+</div>
+			
+				<script type="text/javascript">
+var disqus_shortname = 'roocblog';
 (function () {
 var s = document.createElement('script'); s.async = true;
 s.type = 'text/javascript';
 s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script><script type="text/javascript">var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39747856-1']);
-  _gaq.push(['_setDomainName', 'rooc.me']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
+}());
+</script>
+				<script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();</script></div></body></html>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-81406656-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+			
+		</div>
+		
+
+		<script src="/assets/js/bundle.js"></script>
+	</body>
+
+</html>

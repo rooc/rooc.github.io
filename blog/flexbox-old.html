@@ -1,9 +1,168 @@
-<!DOCTYPE HTML><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Flexbox (April 2012)</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="css3, css, flexbox"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link rel="stylesheet" href="/assets/css/styles.css"><script data-main="/assets/js/config" src="/assets/js/vendor/require.js"></script></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/folio/">Портфолио</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div><h1>Flexbox (April 2012)</h1><div class="meta"><span class="meta-date">Апрель 04, 2012</span> &nbsp;||&nbsp; <span class="meta-tags"><a href="/tags/css.html">css</a> , <a href="/tags/layout.html">layout</a></span> &nbsp;||&nbsp; <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="flexbox-old-disqus">комментарии</a></span></div><p><a href="http://www.w3.org/TR/css3-flexbox/">Flexible Box Layout Module</a> – новая модель компоновки блоков в CSS3. </p><blockquote><p>Спецификация была изменена поэтому статья устарела</p></blockquote><p>Все тесты я делал на Chrome Canary (20.0.1093.0), поэтому вполне могут быть несоответствия, но все похоже на правду.</p><p>HTML во всех примерах:</p><pre><code class="language-markup">&lt;section&gt; &lt;div&gt;A&lt;/div&gt; &lt;div&gt;B&lt;/div&gt; &lt;div&gt;C&lt;/div&gt; &lt;/section&gt;</code></pre><h3>display</h3><p>Flexbox модель начинает работать с того что мы определяем элемент контейнер как flexbox. Дальше флексбокс-элементами считаются элементы которые являются прямыми предками флексбокс контейнера.</p><pre><code class="language-css">section { display: flexbox; }</code></pre><p>Значением <code>display</code> может быть <code>flexbox</code> или <code>inline-flexbox</code>.</p><p>Поскольку flexbox это новая модель построения блоков некоторые css свойства, которые предполагают поведение блоков по блочной (старой) модели, не будут работать. А именно:</p><ul><li><code>column-*</code></li><li><code>float</code> и <code>clear</code></li><li><code>vertical-align</code></li></ul><p>Абсолютно позиционированный элемент-предок не будет вести себя как флексбокс-элемент и не будет влиять компоновку.</p><h3>flex-direction</h3><p>Определяет направление оси по которой выстравиваются блоки. Присваивается элементу контейнеру. Значения говорят сами за себя:</p><pre><code class="language-css">section { flex-direction: row | row-reverse | column | column-reverse; }</code></pre><p><code>row</code> – означает что блоки будут выстраивается по горизонтальной линии <code>column</code> – по вертикальной, как обычные блоки.</p><p><img src="/assets/img/post/flex-1.png" alt="flex-direction" title="figure"></p><h3>flex-wrap</h3><pre><code class="language-css">section { flex-wrap: nowrap | wrap | wrap-reverse; }</code></pre><p>Очень нужная штука, определяет будет ли наш лайоут в одну строку или многострочный. <code>wrap</code> – многострочный, <code>nowrap</code> – однострочный. Применяется к элементу контейнеру. То есть это счастье для решения таких задач как например выстраивание блочков, типа обложек фильмов, в ряды, когда вы не знаете сколько их будет и надо чтобы они были одинаковые. Сейчас это можно делать инлайн-блоками но выравнивание высот по прежнему не очень решаемая проблема средствами CSS.</p><p>Примеры будут ниже.</p><h3>flex-flow</h3><pre><code class="language-css">section { flex-flow: &lt;&#39;flex-direction&#39;&gt; || &lt;&#39;flex-wrap&#39;&gt;; }</code></pre><p>Cокращенная запись двух свойств, видно из синтаксиса.</p><h3>flex-order</h3><pre><code class="language-css">section div{ flex-order: &lt;number&gt;; }</code></pre><p>С этим все прозрачно, применяется к флексбокс элементу.</p><p><img src="/assets/img/post/flex-2.png" alt="flex-order" title="figure caption"></p><h3>flex</h3><pre><code class="language-css">section div{ flex: [ [ &lt;pos-flex&gt; &lt;neg-flex&gt;? ] || &lt;preferred-size&gt; ] | none; }</code></pre><p>Свойство которое отвечает за ширину элемента. Применяется к флекбокс элементу. Первые два свойства это положительные числа, действуют как “сила пружины”, или как доля элемента от общей доступной области. <code>pos-flex</code> – максимальное значение, <code>neg-flex</code> – минимальное, дефолтные значения – 1 и 0.<code>preferred-size</code> – предпочитаемый размер, который должен иметь элемент.</p><p>Если вы хотите указать предпочитаемый размер – 0 то надо указывать размерность, чтобы не было конфликта с значением “веса”.</p><p>На примере видно что значение auto для предпочитаемого размера начинает учитывать количество контента в блоке.</p><p><img src="/assets/img/post/flex-3.png" alt="flex" title="figure caption"></p><h3>flex-pack</h3><pre><code class="language-css">section { flex-pack: start | end | center | justify | distribute; }</code></pre><p>Свойство которое выравнивает блоки относительно главной оси, то есть той по которой выстраиваются блоки.</p><p><img src="/assets/img/post/flex-4.png" alt="flex-pack" title="figure caption"></p><p>Все примеры здесь для горизонтального потока (<code>flex-flow: row</code>), но все то же самое будет для вертикального. Примеры будут ниже.</p><pre><code class="language-css">section {
+<!DOCTYPE HTML>
+<html lang="ru">
+	
+	<head>
+	<meta charset="utf-8">
+	
+		
+	
+	
+	
+	<title>Rooc :: Блог :: Flexbox (April 2012)</title>
+	<meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript">
+	<meta name="keywords" content="css3, css, flexbox">
+	<meta name="author" content="rooc">
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" href="/assets/img/favicon.png">
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+	<body>
+		<div class="l-header">
+	<div class="l-sitewidth">
+		<a href="/" class="logo">Rooc</a>
+		<nav>
+	<ul class="nav">
+		
+		<li class="nav-item">
+			<a href="/">Блог</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/folio/">Портфолио</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/archive/">Архив</a>
+		</li>
+		
+		<li class="nav-item">
+			<a href="/links/">Полезное</a>
+		</li>
+		
+	</ul>
+</nav>
+	</div>
+</div>
+		<div class="l-content">
+			<div class="l-sitewidth">
+				<div class="l-article">
+					<div class="l-space">
+						<div class="social">
+	<a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	<!-- <a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="icon-font--facebookSquared"></i></a> -->
+</div>
+						<h1>Flexbox (April 2012)</h1>
+						<div class="meta">
+	<span class="meta-date">
+		Апрель 04, 2012
+	</span>
+	&nbsp;||&nbsp;
+	<span class="meta-tags">
+		
+			
+			<a href="/tags/css.html">css</a>
+		
+			, 
+			<a href="/tags/layout.html">layout</a>
+		
+	</span>
+	
+	&nbsp;||&nbsp;
+	<span class="meta-comments">
+		<a href="#disqus_thread" data-disqus-identifier="flexbox-old-disqus">комментарии</a>
+	</span>
+</div>
+						<p><a href="http://www.w3.org/TR/css3-flexbox/">Flexible Box Layout Module</a> – новая модель компоновки блоков в CSS3.
+<!-- more --></p>
+<blockquote>
+<p>Спецификация была изменена поэтому статья устарела</p>
+</blockquote>
+<p>Все тесты я делал на Chrome Canary (20.0.1093.0), поэтому вполне могут быть несоответствия, но все похоже на правду.</p>
+<p>HTML во всех примерах:</p>
+<pre><code class="language-markup">&lt;section&gt; &lt;div&gt;A&lt;/div&gt; &lt;div&gt;B&lt;/div&gt; &lt;div&gt;C&lt;/div&gt; &lt;/section&gt;
+</code></pre>
+<h3>display</h3><p>Flexbox модель начинает работать с того что мы определяем элемент контейнер как flexbox. Дальше флексбокс-элементами считаются элементы которые являются прямыми предками флексбокс контейнера.</p>
+<pre><code class="language-css">section { display: flexbox; }
+</code></pre>
+<p>Значением <code>display</code> может быть <code>flexbox</code> или <code>inline-flexbox</code>.</p>
+<p>Поскольку flexbox это новая модель построения блоков некоторые css свойства, которые предполагают поведение блоков по блочной (старой) модели, не будут работать. А именно:</p>
+<ul>
+<li><code>column-*</code></li>
+<li><code>float</code> и <code>clear</code></li>
+<li><code>vertical-align</code></li>
+</ul>
+<p>Абсолютно позиционированный элемент-предок не будет вести себя как флексбокс-элемент и не будет влиять компоновку.</p>
+<h3>flex-direction</h3><p>Определяет направление оси по которой выстравиваются блоки. Присваивается элементу контейнеру. Значения говорят сами за себя:</p>
+<pre><code class="language-css">section { flex-direction: row | row-reverse | column | column-reverse; }
+</code></pre>
+<p><code>row</code> – означает что блоки будут выстраивается по горизонтальной линии <code>column</code> – по вертикальной, как обычные блоки.</p>
+<p><img src="/assets/img/post/flex-1.png" alt="flex-direction" title="figure"></p>
+<h3>flex-wrap</h3><pre><code class="language-css">section { flex-wrap: nowrap | wrap | wrap-reverse; }
+</code></pre>
+<p>Очень нужная штука, определяет будет ли наш лайоут в одну строку или многострочный. <code>wrap</code> – многострочный, <code>nowrap</code> – однострочный. Применяется к элементу контейнеру. То есть это счастье для решения таких задач как например выстраивание блочков, типа обложек фильмов, в ряды, когда вы не знаете сколько их будет и надо чтобы они были одинаковые. Сейчас это можно делать инлайн-блоками но выравнивание высот по прежнему не очень решаемая проблема средствами CSS.</p>
+<p>Примеры будут ниже.</p>
+<h3>flex-flow</h3><pre><code class="language-css">section { flex-flow: &lt;&#39;flex-direction&#39;&gt; || &lt;&#39;flex-wrap&#39;&gt;; }
+</code></pre>
+<p>Cокращенная запись двух свойств, видно из синтаксиса.</p>
+<h3>flex-order</h3><pre><code class="language-css">section div{ flex-order: &lt;number&gt;; }
+</code></pre>
+<p>С этим все прозрачно, применяется к флексбокс элементу.</p>
+<p><img src="/assets/img/post/flex-2.png" alt="flex-order" title="figure caption"></p>
+<h3>flex</h3><pre><code class="language-css">section div{ flex: [ [ &lt;pos-flex&gt; &lt;neg-flex&gt;? ] || &lt;preferred-size&gt; ] | none; }
+</code></pre>
+<p>Свойство которое отвечает за ширину элемента. Применяется к флекбокс элементу. Первые два свойства это положительные числа, действуют как “сила пружины”, или как доля элемента от общей доступной области. <code>pos-flex</code> – максимальное значение, <code>neg-flex</code> – минимальное, дефолтные значения – 1 и 0.<code>preferred-size</code> – предпочитаемый размер, который должен иметь элемент.</p>
+<p>Если вы хотите указать предпочитаемый размер – 0 то надо указывать размерность, чтобы не было конфликта с значением “веса”.</p>
+<p>На примере видно что значение auto для предпочитаемого размера начинает учитывать количество контента в блоке.</p>
+<p><img src="/assets/img/post/flex-3.png" alt="flex" title="figure caption"></p>
+<h3>flex-pack</h3><pre><code class="language-css">section { flex-pack: start | end | center | justify | distribute; }
+</code></pre>
+<p>Свойство которое выравнивает блоки относительно главной оси, то есть той по которой выстраиваются блоки.</p>
+<p><img src="/assets/img/post/flex-4.png" alt="flex-pack" title="figure caption"></p>
+<p>Все примеры здесь для горизонтального потока (<code>flex-flow: row</code>), но все то же самое будет для вертикального. Примеры будут ниже.</p>
+<pre><code class="language-css">section {
     flex-align: start | end | center | justify | distribute | stretch;
 }
 section div{
     flex-item-align: start | end | center | justify | distribute | stretch;
-}</code></pre><p>Выравнивание элементов относительно перпендикуляру главной оси. <code>flex-align</code> – применяется к контейнеру, а <code>flex-item-align</code> для элемента на случай когда надо перекрыть общее значение.</p><p>Стоит запомнить что дефолтное значение <code>flex-align: stretch</code> , поэтому в случае <code>flex-flow: row</code> блоки будут высотой контейнера, что мне было странно )</p><p><img src="/assets/img/post/flex-5.png" alt="flex-align" title="figure caption"></p><p>А вот это полный П. Не могу поверить что такое вообще возможно )</p><p><img src="/assets/img/post/flex-6.png" alt="flex-item-align" title="figure caption"></p><h3>Многострочный flexbox</h3><p>Пример для понимания как работает <code>flex-wrap</code></p><p><img src="/assets/img/post/flex-7.png" alt="multi-line flexbox" title="figure caption"></p><p>Интересная деталь – я указал размеры боксов в пикселах, хотя изначально пытался в процентах – 50%. И блоки не хотели выстраиваться по два в строку. Флексбокс-элемент ведет себя подобно инлайн-блоку, то есть блоки не стыкуются без зазора. Хотя это может быть реализацией в Canary.</p><h3>flex-line-pack</h3><pre><code class="language-css">section { flex-line-pack: start | end | center | justify | distribute | stretch; }</code></pre><p>Эта штука служит для выравнивания осей флексбокс элементов когда их несколько, то есть это свойство работает только для <code>flex-wrap: wrap</code></p><p><img src="/assets/img/post/flex-8.png" alt="flex-line-pack" title="figure caption"></p><p>Немного едет крыша от количества свойств для выравнивания, но вроде все логично, выравнивать мы можем:</p><ul><li>боксы по оси “выстраивания”</li><li>боксы по перпендикуляру к ней же</li><li>строки боксов по вертикали когда их несколько</li></ul><h3>По теме:</h3><ul><li><a href="http://tools.google.com/dlpage/chromesxs">Chrome Canary</a></li><li><a href="http://www.w3.org/TR/css3-flexbox/">Flexible Box Layout Module</a></li></ul><p>Где работает:</p><div class="l-space"><div data-feature="flexbox" class="caniuse"></div></div></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+}
+</code></pre>
+<p>Выравнивание элементов относительно перпендикуляру главной оси. <code>flex-align</code> – применяется к контейнеру, а <code>flex-item-align</code> для элемента на случай когда надо перекрыть общее значение.</p>
+<p>Стоит запомнить что дефолтное значение <code>flex-align: stretch</code> , поэтому в случае <code>flex-flow: row</code>  блоки будут высотой контейнера, что мне было странно )</p>
+<p><img src="/assets/img/post/flex-5.png" alt="flex-align" title="figure caption"></p>
+<p>А вот это полный П. Не могу поверить что такое вообще возможно )</p>
+<p><img src="/assets/img/post/flex-6.png" alt="flex-item-align" title="figure caption"></p>
+<h3>Многострочный flexbox</h3><p>Пример для понимания как работает <code>flex-wrap</code></p>
+<p><img src="/assets/img/post/flex-7.png" alt="multi-line flexbox" title="figure caption"></p>
+<p>Интересная деталь – я указал размеры боксов в пикселах, хотя изначально пытался в процентах – 50%. И блоки не хотели выстраиваться по два в строку. Флексбокс-элемент ведет себя подобно инлайн-блоку, то есть блоки не стыкуются без зазора. Хотя это может быть реализацией в Canary.</p>
+<h3>flex-line-pack</h3><pre><code class="language-css">section { flex-line-pack: start | end | center | justify | distribute | stretch; }
+</code></pre>
+<p>Эта штука служит для выравнивания осей флексбокс элементов когда их несколько, то есть это свойство работает только для <code>flex-wrap: wrap</code></p>
+<p><img src="/assets/img/post/flex-8.png" alt="flex-line-pack" title="figure caption"></p>
+<p>Немного едет крыша от количества свойств для выравнивания, но вроде все логично, выравнивать мы можем:</p>
+<ul>
+<li>боксы по оси “выстраивания”</li>
+<li>боксы по перпендикуляру к ней же</li>
+<li>строки боксов по вертикали когда их несколько</li>
+</ul>
+<h3>По теме:</h3><ul>
+<li><a href="http://tools.google.com/dlpage/chromesxs">Chrome Canary</a></li>
+<li><a href="http://www.w3.org/TR/css3-flexbox/">Flexible Box Layout Module</a></li>
+</ul>
+<p>Где работает:</p>
+<div class="l-space">
+    <div data-feature="flexbox" class="caniuse"></div>
+</div>
+					</div>
+					
+						<div class="l-space l-box l-line">
+	<div id="disqus_thread"></div>
+</div>
+
+<script>
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	var disqus_shortname = 'roocblog';
 	var disqus_identifier = 'flexbox-old-disqus';
 
@@ -12,20 +171,449 @@ section div{
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-xspace l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple c-small"><li><a href="/blog/using-svg.html" class="c-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="c-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="c-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="c-link--sidebar">HarpJs</a></li><li><a href="/blog/todos.html" class="c-link--sidebar">Планировщики</a></li><li><a href="/blog/radial-gradient.html" class="c-link--sidebar">Radial Gradient</a></li></ul></div><div class="l-xspace l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags c-small"><li class="list--tags-item--active"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item--active"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-xspace l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple c-small"><li><a href="/posts.xml" class="c-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="c-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика.<br>В вебе с 2000 года, работаю в фирме Телкос. Мне можно <a href="mailto:rooc@mail.ru">написать</a>.</div><div class="l-space">&copy; Rooc 2013 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script type="text/javascript">var disqus_shortname = 'roocblog';
+	})();
+</script>
+
+<noscript>
+	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+
+<a href="http://disqus.com" class="dsq-brlink">
+	comments powered by 
+	<span class="logo-disqus">Disqus</span>
+</a>
+					
+				</div>
+				<div class="l-sidebar">
+					<div class="l-space-l l-box l-line" rel="recent">
+	<h5>Недавно</h5>
+	<ul class="list--simple t-size-s">
+		
+		
+		
+			
+				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
+			
+		
+			
+				<li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li>
+			
+		
+			
+				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
+			
+		
+			
+				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
+			
+		
+			
+				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
+			
+		
+			
+				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
+			
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="tags">
+	<h5>Теги</h5>
+	<ul class="list--tags t-size-s">
+		
+		
+			
+				
+					
+						
+					
+				
+					
+						
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+			
+				
+					
+				
+					
+						
+					
+				
+			
+		
+			
+				
+					
+				
+			
+		
+		<!-- tag listing -->
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+					
+				
+			
+			<li class="list--tags-item--active">
+				<a href="/tags/css.html">css</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/oocss.html">oocss</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/translation.html">translation</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/svg.html">svg</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+					
+				
+			
+			<li class="list--tags-item--active">
+				<a href="/tags/layout.html">layout</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/gradient.html">gradient</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/form.html">form</a>
+			</li>
+		
+			<!-- highlighting tags in current document -->
+			<!-- checking if current page is not tag page -->
+			
+			 
+				
+			
+			
+			
+				
+			
+			<li class="list--tags-item">
+				<a href="/tags/font.html">font</a>
+			</li>
+		
+	</ul>
+</div>
+
+<div class="l-space-l l-box l-line" rel="rss">
+	<h5>RSS</h5>
+	<ul class="list--simple t-size-s">
+		<li>
+			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
+		</li>
+		<li>
+			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
+		</li>
+	</ul>
+</div>
+
+
+				</div>
+			</div>
+			<div class="l-footer">
+	<div class="l-sitewidth">
+		<div class="l-space l-box l-line">
+			Блог веб разработчика. В вебе с 2000 года.
+			<a href="https://twitter.com/rooczebra/">Twitter</a>
+		</div>
+		<div class="l-space">
+			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
+		</div>
+	</div>
+</div>
+			
+				<script type="text/javascript">
+var disqus_shortname = 'roocblog';
 (function () {
 var s = document.createElement('script'); s.async = true;
 s.type = 'text/javascript';
 s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
 (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());</script><script type="text/javascript">var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-39747856-1']);
-  _gaq.push(['_setDomainName', 'rooc.me']);
-  _gaq.push(['_setAllowLinker', true]);
-  _gaq.push(['_trackPageview']);
+}());
+</script>
+				<script>
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();</script></div></body></html>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-81406656-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+			
+		</div>
+		
+
+		<script src="/assets/js/bundle.js"></script>
+	</body>
+
+</html>
