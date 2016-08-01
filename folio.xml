@@ -6,9 +6,9 @@
 		<link>http://rooc.me</link>
 		<lastBuildDate>
 			
-			Wed Jul 27 2016 18:21:27 GMT+0300 (EEST)
+			Mon Aug 01 2016 14:10:27 GMT+0300 (EEST)
 		</lastBuildDate>
-		<atom:link href="rooc.github.io/rss/posts.xml" rel="self" type="application/rss+xml"/>
+		<atom:link href="rooc.github/rss/posts.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[rooc]]></author>
 
 		
@@ -300,7 +300,7 @@
 		
 			<item>
 				<title>Promkod v.2</title>
-				<link>rooc.github.iofolio/promkod-a.html</link>
+				<link>rooc.githubfolio/promkod-a.html</link>
 				<description>
 					&lt;p&gt;ПромКод.ру – Новые промо-коды и скидки в интернет-магазинах. Покупай со скидкой!
 				</description>
@@ -313,7 +313,7 @@
 		
 			<item>
 				<title>Styletopic v.3</title>
-				<link>rooc.github.iofolio/styletopic-a.html</link>
+				<link>rooc.githubfolio/styletopic-a.html</link>
 				<description>
 					&lt;p&gt;Shopping Guide and Fashion Stores Reviews
 				</description>
@@ -326,7 +326,7 @@
 		
 			<item>
 				<title>Travel Planning</title>
-				<link>rooc.github.iofolio/travelplanning.html</link>
+				<link>rooc.githubfolio/travelplanning.html</link>
 				<description>
 					&lt;p&gt;
 	Верстка для сайта TravelPlanning.fr
@@ -340,7 +340,7 @@
 		
 			<item>
 				<title>DL</title>
-				<link>rooc.github.iofolio/dl.html</link>
+				<link>rooc.githubfolio/dl.html</link>
 				<description>
 					&lt;p&gt;Начальный шаблон для каталога лекарств
 				</description>
@@ -353,7 +353,7 @@
 		
 			<item>
 				<title>Промкод</title>
-				<link>rooc.github.iofolio/promkod.html</link>
+				<link>rooc.githubfolio/promkod.html</link>
 				<description>
 					&lt;p&gt;ПромКод.ру – Новые промо-коды и скидки в интернет-магазинах. Покупай со скидкой!
 				</description>
