@@ -1,128 +1,12 @@
-<!DOCTYPE HTML>
-<html lang="ru">
-	
-	<head>
-	<meta charset="utf-8">
-	
-		
-	
-	
-	
-	<title>Rooc :: Блог :: Основы работы с SVG</title>
-	<meta name="description" content="Основы работы с SVG, с чего начинать, приемы и техники, оптимизация">
-	<meta name="keywords" content="svg, веб, основы, html, img, data uri, inline">
-	<meta name="author" content="rooc">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="/assets/img/favicon.png">
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-
-	<body>
-		<div class="l-header">
-	<div class="l-sitewidth">
-		<a href="/" class="logo">Rooc</a>
-		<nav>
-	<ul class="nav">
-		
-		<li class="nav-item">
-			<a href="/">Блог</a>
-		</li>
-		
-		<li class="nav-item">
-			<a href="/archive/">Архив</a>
-		</li>
-		
-		<li class="nav-item">
-			<a href="/links/">Полезное</a>
-		</li>
-		
-	</ul>
-</nav>
-	</div>
-</div>
-		<div class="l-content">
-			<div class="l-sitewidth">
-				<div class="l-article">
-					<div class="l-space">
-						<div class="social">
-	<a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	<!-- <a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="icon-font--facebookSquared"></i></a> -->
-</div>
-						<h1>Основы работы с SVG</h1>
-						<div class="meta">
-	<span class="meta-date">
-		Июнь 18, 2014
-	</span>
-	&nbsp;||&nbsp;
-	<span class="meta-tags">
-		
-			
-			<a href="/tags/css.html">css</a>
-		
-			, 
-			<a href="/tags/svg.html">svg</a>
-		
-			, 
-			<a href="/tags/translation.html">translation</a>
-		
-	</span>
-	
-		&nbsp;||&nbsp;
-		<a class="meta-original" href="http://css-tricks.com/using-svg/" target="_blank">Using SVG</a>
-	
-	&nbsp;||&nbsp;
-	<span class="meta-comments">
-		<a href="#disqus_thread" data-disqus-identifier="using-svg-disqus">комментарии</a>
-	</span>
-</div>
-						<p>SVG это формат векторной графики, буквально означающий <strong>Масштабируемая Векторная Графика</strong>. Собственно это то с чем вы работаете в Иллюстраторе. SVG использовать в вебе довольно просто но тем не менее есть куча того что необходимо знать.<!-- more --></p>
-<p>###Зачем это вообще все?</p>
-<ul>
-<li>Маленький размер который к тому же хорошо сжимается</li>
-<li>Масштабирование без потери четкости (за исключением очень маленьких размеров)</li>
-<li>Отлично выглядит на ретине</li>
-<li>Легко управляем, фильтры, интерактивность</li>
-</ul>
-<p>###Где взять SVG графику</p>
-<p>Нарисуйте что-нибудь в Иллюстраторе, вот к примеру типа такого:</p>
-<p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/kiwi.png" alt="Kiwi" title="figure"></p>
-<p>Обратите внимание что картинка обрезана четко по краю изображения. Полотно, или основа, имеет значение в svg точно также как в png или jpg.</p>
-<p>Графику в Иллюстраторе можно сохранять как svg файл.</p>
-<p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/save-as-svg.png" alt="save as" title="figure"></p>
-<p>При сохранении есть кучка настроек но я честно говоря особо в них не разбираюсь. На эту тему есть целая <a href="http://www.w3.org/TR/SVGMobile/">спецификация</a>. Сохранение как версия 1.1 работает нормально как по мне.</p>
-<p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/svg-options.png" alt="options" title="figure"></p>
-<p>Интересный момент здесь в том что можно либо сохранить файл либо выбрать <code>SVG Code...</code> и при этом откроется текстовый редактор с кодом svg.</p>
-<p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/svg-code.png" alt="code" title="figure"></p>
-<p>Оба варианта полезны.</p>
-<p>##Использование svg как <code>&lt;img&gt;</code></p>
-<p>После сохранения svg файла, его можно напрямую использовать в html.</p>
-<pre><code class="language-html">&lt;img src=&quot;kiwi.svg&quot; alt=&quot;Kiwi standing on oval&quot;&gt;
-</code></pre>
-<p>В иллюстраторе полотно было размером 612 на 502 пиксела.</p>
-<p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/artboard.png" alt="illustrator" title="figure"></p>
-<p>Именно такого размера картинка будет на странице если ей никак не задавать размеры. Можно просто поменять размер точно также как это делается для png или jpeg изменяя <code>width</code> и <code>height</code>.</p>
-<p><a class="jsbin-embed" href="http://jsbin.com/caret/1/embed?output">JS Bin</a></p>
-<p>###Поддержка браузерами</p>
-<p>Использование svg в элементе img поддерживают <a href="http://caniuse.com/#feat=svg-img">такие браузеры</a>, а точнее - это работает везде кроме Эксплорер 8 и ниже и Андроид 2.3 и ниже.</p>
-<p>Если вы хотите использовать svg но также нужно как то поддерживать эти браузеры то есть несколько вариантов. О нескольких разных вариантах я рассказывал на <a href="http://css-tricks.com/workshop-notes-webstock-13/">разных</a> <a href="http://css-tricks.com/workshop-notes-from-incontrol-hawaii/">семинарах</a>.</p>
-<p>Один из вариантов это проверить поддержку SVG при помощи Modernizr и поменять атрибут <code>src</code>.</p>
-<pre><code class="language-js">if (!Modernizr.svg) {
-  $(&quot;.logo img&quot;).attr(&quot;src&quot;, &quot;images/logo.png&quot;);
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Основы работы с SVG</title><meta name="description" content="Основы работы с SVG, с чего начинать, приемы и техники, оптимизация"><meta name="keywords" content="svg, веб, основы, html, img, data uri, inline"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link href="http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic" rel="stylesheet"><link rel="stylesheet" href="/assets/css/styles.css"></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(t,e,n){var r,s=t.getElementsByTagName(e)[0],a=/^http:/.test(t.location)?"http":"https";t.getElementById(n)||(r=t.createElement(e),r.id=n,r.async=!0,r.src=a+"://platform.twitter.com/widgets.js",s.parentNode.insertBefore(r,s))}(document,"script","twitter-wjs")</script></div><h1>Основы работы с SVG</h1><div class="meta"><span class="meta-date">Июнь 18, 2014 </span>||  <span class="meta-tags"><a href="/tags/css.html">css</a> , <a href="/tags/svg.html">svg</a> , <a href="/tags/translation.html">translation</a> </span>||  <a class="meta-original" href="http://css-tricks.com/using-svg/" target="_blank">Using SVG</a>  ||  <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="using-svg-disqus">комментарии</a></span></div><p>SVG это формат векторной графики, буквально означающий <strong>Масштабируемая Векторная Графика</strong>. Собственно это то с чем вы работаете в Иллюстраторе. SVG использовать в вебе довольно просто но тем не менее есть куча того что необходимо знать.</p><h3>Зачем это вообще все?</h3><ul><li>Маленький размер который к тому же хорошо сжимается</li><li>Масштабирование без потери четкости (за исключением очень маленьких размеров)</li><li>Отлично выглядит на ретине</li><li>Легко управляем, фильтры, интерактивность</li></ul><h3>Где взять SVG графику</h3><p>Нарисуйте что-нибудь в Иллюстраторе, вот к примеру типа такого:</p><p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/kiwi.png" alt="Kiwi" title="figure"></p><p>Обратите внимание что картинка обрезана четко по краю изображения. Полотно, или основа, имеет значение в svg точно также как в png или jpg.</p><p>Графику в Иллюстраторе можно сохранять как svg файл.</p><p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/save-as-svg.png" alt="save as" title="figure"></p><p>При сохранении есть кучка настроек но я честно говоря особо в них не разбираюсь. На эту тему есть целая <a href="http://www.w3.org/TR/SVGMobile/">спецификация</a>. Сохранение как версия 1.1 работает нормально как по мне.</p><p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/svg-options.png" alt="options" title="figure"></p><p>Интересный момент здесь в том что можно либо сохранить файл либо выбрать <code>SVG Code...</code> и при этом откроется текстовый редактор с кодом svg.</p><p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/svg-code.png" alt="code" title="figure"></p><p>Оба варианта полезны.</p><h2>Использование svg как <code>&lt;img></code></h2><p>После сохранения svg файла, его можно напрямую использовать в html.</p><pre><code class="language-html">&lt;img src="kiwi.svg" alt="Kiwi standing on oval">
+</code></pre><p>В иллюстраторе полотно было размером 612 на 502 пиксела.</p><p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/artboard.png" alt="illustrator" title="figure"></p><p>Именно такого размера картинка будет на странице если ей никак не задавать размеры. Можно просто поменять размер точно также как это делается для png или jpeg изменяя <code>width</code> и <code>height</code>.</p><p><a class="jsbin-embed" href="http://jsbin.com/caret/1/embed?output">JS Bin</a></p><h3>Поддержка браузерами</h3><p>Использование svg в элементе img поддерживают <a href="http://caniuse.com/#feat=svg-img">такие браузеры</a>, а точнее - это работает везде кроме Эксплорер 8 и ниже и Андроид 2.3 и ниже.</p><p>Если вы хотите использовать svg но также нужно как то поддерживать эти браузеры то есть несколько вариантов. О нескольких разных вариантах я рассказывал на <a href="http://css-tricks.com/workshop-notes-webstock-13/">разных</a> <a href="http://css-tricks.com/workshop-notes-from-incontrol-hawaii/">семинарах</a>.</p><p>Один из вариантов это проверить поддержку SVG при помощи Modernizr и поменять атрибут <code>src</code>.</p><pre><code class="language-js">if (!Modernizr.svg) {
+  $(".logo img").attr("src", "images/logo.png");
 }
-</code></pre>
-<p>David Bushell предложил очень <a href="http://dbushell.com/2013/02/04/a-primer-to-front-end-svg-hacking/">простую альтернативу</a>, если вас не смущает джаваскрипт код в html:</p>
-<pre><code class="language-html">&lt;img src=&quot;image.svg&quot; onerror=&quot;this.onerror=null; this.src=&#39;image.png&#39;&quot;&gt;
-</code></pre>
-<p>Есть еще такой инструмент - <a href="http://benhowdle.im/svgeezy/">SVGeezy</a>.</p>
-<p>##SVG как фоновая картинка</p>
-<p>Точно также как обычные картинки можно применять svg как фоновую картинку.</p>
-<pre><code class="language-html">&lt;a href=&quot;/&quot; class=&quot;logo&quot;&gt;
+</code></pre><p>David Bushell предложил очень <a href="http://dbushell.com/2013/02/04/a-primer-to-front-end-svg-hacking/">простую альтернативу</a>, если вас не смущает джаваскрипт код в html:</p><pre><code class="language-html">&lt;img src="image.svg" onerror="this.onerror=null; this.src='image.png'">
+</code></pre><p>Есть еще такой инструмент - <a href="http://benhowdle.im/svgeezy/">SVGeezy</a>.</p><h2>SVG как фоновая картинка</h2><p>Точно также как обычные картинки можно применять svg как фоновую картинку.</p><pre><code class="language-html">&lt;a href="/" class="logo">
   Kiwi Corp
-&lt;/a&gt;
-</code></pre>
-<pre><code class="language-css">.logo {
+&lt;/a>
+</code></pre><pre><code class="language-css">.logo {
     display: block;
     text-indent: -9999px;
     width: 100px;
@@ -130,12 +14,7 @@
     background: url(kiwi.svg);
     background-size: 100px 82px;
 }
-</code></pre>
-<p>Обратите внимание что размер фоновой картинки установлен в размер самого элемента <code>.logo</code>. Это необходимо, иначе мы увидим только верхний левый фрагмент намного большей исходной svg картинки. Эти размеры должны учитывать соотношение сторон оригинальной картинки. Но не забывайте что можно просто использовать <code>background-size: contain</code> если вы не знаете точных размеров родительского элемента.</p>
-<p>###Поддержка браузерами</p>
-<p>Использование svg для фоновых картинок имеет похожую на SVG для картинок <a href="http://caniuse.com/#feat=svg-css">поддержку</a>. Проблемы только с ИЕ 8 и ниже и андроид 2.3 и ниже.</p>
-<p>Опять же modernizr хорошо помогает здесь и даже более эффективно чем с img. Если мы поменяем значение для <code>background-image</code> на поддерживаемый формат то буден сделан только один http запрос вместо двух в предыдущем случае. Модернизер добавляет класс в html - <code>no-svg</code> если браузер не поддерживает формат, и тогда мы можем сделать:</p>
-<pre><code class="language-css">.main-header {
+</code></pre><p>Обратите внимание что размер фоновой картинки установлен в размер самого элемента <code>.logo</code>. Это необходимо, иначе мы увидим только верхний левый фрагмент намного большей исходной svg картинки. Эти размеры должны учитывать соотношение сторон оригинальной картинки. Но не забывайте что можно просто использовать <code>background-size: contain</code> если вы не знаете точных размеров родительского элемента.</p><h3>Поддержка браузерами</h3><p>Использование svg для фоновых картинок имеет похожую на SVG для картинок <a href="http://caniuse.com/#feat=svg-css">поддержку</a>. Проблемы только с ИЕ 8 и ниже и андроид 2.3 и ниже.</p><p>Опять же modernizr хорошо помогает здесь и даже более эффективно чем с img. Если мы поменяем значение для <code>background-image</code> на поддерживаемый формат то буден сделан только один http запрос вместо двух в предыдущем случае. Модернизер добавляет класс в html - <code>no-svg</code> если браузер не поддерживает формат, и тогда мы можем сделать:</p><pre><code class="language-css">.main-header {
   background: url(logo.svg) no-repeat top left;
   background-size: contain;
 }
@@ -143,602 +22,64 @@
 .no-svg .main-header {
   background-image: url(logo.png);
 }
-</code></pre>
-<p>Другой умный прием использования svg фоновых картинок заключается в том чтобы использовать их совместно с множественным фоном. SVG и фоновые картинки имеют одинаковую поддержку браузеров так что если браузер понимает множественный бекграунд то он понимает и svg, поэтому:</p>
-<pre><code class="language-css">body {
+</code></pre><p>Другой умный прием использования svg фоновых картинок заключается в том чтобы использовать их совместно с множественным фоном. SVG и фоновые картинки имеют одинаковую поддержку браузеров так что если браузер понимает множественный бекграунд то он понимает и svg, поэтому:</p><pre><code class="language-css">body {
   background: url(fallback.png);
   background-image: url(image.svg), none;
 }
-</code></pre>
-<p>###Проблема с <img> и с фоновыми картинками</p>
-<p>В том что вы не получаете контроля над содержимым SVG по сравнению с следующими двумя способами.</p>
-<p>##Инлайновый svg</p>
-<p>Помните способ получить код svg который мы встречали когда сохраняли svg из иллюстратора? Этот же самый код можно получить просто открыв svg файл текстовым редактором. Так вот можно взять этот код, вставить прямо в html и мы получим ту же самую картинку как если бы вставили элементом img.</p>
-<pre><code class="language-html">&lt;body&gt;
+</code></pre><h3>Проблема с <img> и с фоновыми картинками</h3><p>В том что вы не получаете контроля над содержимым SVG по сравнению с следующими двумя способами.</p><h2>Инлайновый svg</h2><p>Помните способ получить код svg который мы встречали когда сохраняли svg из иллюстратора? Этот же самый код можно получить просто открыв svg файл текстовым редактором. Так вот можно взять этот код, вставить прямо в html и мы получим ту же самую картинку как если бы вставили элементом img.</p><pre><code class="language-html">&lt;body>
 
-   &lt;!-- paste in SVG code, image shows up!  --&gt;
+   &lt;!-- paste in SVG code, image shows up!  -->
 
-&lt;/body&gt;
-</code></pre>
-<p>Плюс здесь в том что картинка уже находится прямо в документе и не требует никаких http запросов. Другими словами плюсы в этом такие же как при использовании <a href="http://css-tricks.com/data-uris/">Data URI</a>. И недостатки тоже те же самые. Потенциально раздутый код, здоровая куча хлама прямо в документе который вы редактируете плюс невозможность кеширования.</p>
-<p>Если вы пишете на каком нибудь серверном языке то вы можете добиться чистоты как то так:</p>
-<pre><code class="language-php">&lt;?php include(&quot;kiwi.svg&quot;); ?&gt;
-</code></pre>
-<p>###Оптимизация</p>
-<p>Наверно вас это не сильно удивит но svg который делает иллюстратор не самый идеальный с точки зрения оптимизации. Поджать можно при помощи <a href="http://petercollingridge.appspot.com/svg_optimiser">SVG Optimiser</a>. Загружаете старый выгружаете новый. В этом <a href="http://www.youtube.com/watch?v=iVzW3XuOm7E&amp;feature=youtu.be">видео</a> показываеться что можно даже удалить переносы строк после такой оптимизации.</p>
-<p>Если вы реально круты вот вам <a href="https://github.com/svg/svgo">инструмент</a> для Нода.</p>
-<p>И теперь можно контролировать картинку стилями!</p>
-<p>Нетрудно заметить что svg выглядит очень похоже на html, это потому что по сути xml документы. Наша конкретная картинка состоит из двух тегов, <code>&lt;ellipse&gt;</code> и <code>&lt;path&gt;</code>. Ничего нам не мешает присвоить элементам классы точно также как мы делаем в html.</p>
-<pre><code class="language-html">&lt;svg ...&gt;
-  &lt;ellipse class=&quot;ground&quot; .../&gt;
-  &lt;path class=&quot;kiwi&quot; .../&gt;
-&lt;/svg&gt;
-</code></pre>
-<p>Теперь мы можем стайлить эти элементы специальным svg css. Эти стили не обязательно должны быть внутри svg, можно даже их выносить в наши обычные стили. Обратите внимание что элементы svg имеют свои специфические css свойства. К примеру вместо <code>background-color</code> надо использовать <code>fill</code>. Обычные штуки типа ховера работают.</p>
-<pre><code class="language-css">.kiwi {
-  fill: #94d31b; 
+&lt;/body>
+</code></pre><p>Плюс здесь в том что картинка уже находится прямо в документе и не требует никаких http запросов. Другими словами плюсы в этом такие же как при использовании <a href="http://css-tricks.com/data-uris/">Data URI</a>. И недостатки тоже те же самые. Потенциально раздутый код, здоровая куча хлама прямо в документе который вы редактируете плюс невозможность кеширования.</p><p>Если вы пишете на каком нибудь серверном языке то вы можете добиться чистоты как то так:</p><pre><code class="language-php">&lt;?php include("kiwi.svg"); ?>
+</code></pre><h3>Оптимизация</h3><p>Наверно вас это не сильно удивит но svg который делает иллюстратор не самый идеальный с точки зрения оптимизации. Поджать можно при помощи <a href="http://petercollingridge.appspot.com/svg_optimiser">SVG Optimiser</a>. Загружаете старый выгружаете новый. В этом <a href="http://www.youtube.com/watch?v=iVzW3XuOm7E&feature=youtu.be">видео</a> показываеться что можно даже удалить переносы строк после такой оптимизации.</p><p>Если вы реально круты вот вам <a href="https://github.com/svg/svgo">инструмент</a> для Нода.</p><p>И теперь можно контролировать картинку стилями!</p><p>Нетрудно заметить что svg выглядит очень похоже на html, это потому что по сути xml документы. Наша конкретная картинка состоит из двух тегов, <code>&lt;ellipse></code> и <code>&lt;path></code>. Ничего нам не мешает присвоить элементам классы точно также как мы делаем в html.</p><pre><code class="language-html">&lt;svg ...>
+  &lt;ellipse class="ground" .../>
+  &lt;path class="kiwi" .../>
+&lt;/svg>
+</code></pre><p>Теперь мы можем стайлить эти элементы специальным svg css. Эти стили не обязательно должны быть внутри svg, можно даже их выносить в наши обычные стили. Обратите внимание что элементы svg имеют свои специфические css свойства. К примеру вместо <code>background-color</code> надо использовать <code>fill</code>. Обычные штуки типа ховера работают.</p><pre><code class="language-css">.kiwi {
+  fill: #94d31b;
 }
 .kiwi:hover {
-  fill: #ace63c; 
+  fill: #ace63c;
 }
-</code></pre>
-<p>Что совсем круто так это фильтры в svg. Например размытие. Сначала надо вписать фильтр в svg:</p>
-<pre><code class="language-html">&lt;svg ...&gt;
+</code></pre><p>Что совсем круто так это фильтры в svg. Например размытие. Сначала надо вписать фильтр в svg:</p><pre><code class="language-html">&lt;svg ...>
   ...
-  &lt;filter id=&quot;pictureFilter&quot; &gt;
-    &lt;feGaussianBlur stdDeviation=&quot;5&quot; /&gt;
-  &lt;/filter&gt; 
-&lt;/svg&gt;
-</code></pre>
-<p>Потом это используется в стилях так:</p>
-<pre><code class="language-css">.ground:hover {
+  &lt;filter id="pictureFilter" >
+    &lt;feGaussianBlur stdDeviation="5" />
+  &lt;/filter>
+&lt;/svg>
+</code></pre><p>Потом это используется в стилях так:</p><pre><code class="language-css">.ground:hover {
     filter: url(#pictureFilter);
 }
-</code></pre>
-<p><a class="jsbin-embed" href="http://jsbin.com/qeyuju/1/embed?output">JS Bin</a></p>
-<p>###Поддержка</p>
-<p>У встроенный svg свой <a href="http://caniuse.com/#feat=svg-html5">набор поддерживаемых браузеров</a>, но, опять же, проблемы с ИЕ8 и андроидом 2.3.</p>
-<p>Один способ реализовать совместимость:</p>
-<pre><code class="language-html">&lt;svg&gt; ... &lt;/svg&gt;
-&lt;div class=&quot;fallback&quot;&gt;&lt;/div&gt;
-</code></pre>
-<p>Дальше при помощи Модернизера:</p>
-<pre><code class="language-css">.fallback { 
+</code></pre><p><a class="jsbin-embed" href="http://jsbin.com/qeyuju/1/embed?output">JS Bin</a></p><h3>Поддержка</h3><p>У встроенный svg свой <a href="http://caniuse.com/#feat=svg-html5">набор поддерживаемых браузеров</a>, но, опять же, проблемы с ИЕ8 и андроидом 2.3.</p><p>Один способ реализовать совместимость:</p><pre><code class="language-html">&lt;svg> ... &lt;/svg>
+&lt;div class="fallback">&lt;/div>
+</code></pre><p>Дальше при помощи Модернизера:</p><pre><code class="language-css">.fallback {
   display: none;
 
 }
-.no-svg .fallback { 
-  background-image: url(logo.png); 
+.no-svg .fallback {
+  background-image: url(logo.png);
 }
-</code></pre>
-<p>##SVG как <code>&lt;object&gt;</code></p>
-<p>Если видеть в html кучу хлама вам не по душе можно залинковать svg файл сохраняя возможность работать с деревом элементов:</p>
-<pre><code class="language-html">&lt;object type=&quot;image/svg+xml&quot; data=&quot;kiwi.svg&quot; class=&quot;logo&quot;&gt;
-  Kiwi Logo &lt;!-- fallback image in CSS --&gt;
-&lt;/object&gt;
-</code></pre>
-<p>Для старья опять Модернизер:</p>
-<pre><code class="language-css">.no-svg .logo {
+</code></pre><h2>SVG как <code>&lt;object></code></h2><p>Если видеть в html кучу хлама вам не по душе можно залинковать svg файл сохраняя возможность работать с деревом элементов:</p><pre><code class="language-html">&lt;object type="image/svg+xml" data="kiwi.svg" class="logo">
+  Kiwi Logo &lt;!-- fallback image in CSS -->
+&lt;/object>
+</code></pre><p>Для старья опять Модернизер:</p><pre><code class="language-css">.no-svg .logo {
   width: 200px;
   height: 164px;
   background-image: url(kiwi.png);
 }
-</code></pre>
-<p>В данном случае мы получаем кеширование и наилучшую поддержку браузерами чем в любом другом варианте, но для того чтобы работали стили придется включать стили внутрь svg файла. Ни внешние стили ни стили внутри <code>&lt;style&gt;</code> работать не будут.</p>
-<pre><code class="language-css">&lt;svg ...&gt;
-  &lt;style&gt;
+</code></pre><p>В данном случае мы получаем кеширование и наилучшую поддержку браузерами чем в любом другом варианте, но для того чтобы работали стили придется включать стили внутрь svg файла. Ни внешние стили ни стили внутри <code>&lt;style></code> работать не будут.</p><pre><code class="language-css">&lt;svg ...>
+  &lt;style>
     /* SVG specific fancy CSS styling here */
-  &lt;/style&gt;
+  &lt;/style>
   ...
-&lt;/svg&gt;
-</code></pre>
-<p>###Внешние стили для <code>&lt;object&gt;</code></p>
-<p>Есть способ для указания внешних стилей что есть неплохо для кеширования. Это работает только для <code>&lt;object&gt;</code> содержащими svg файл, по крайней мере мои тесты показали так. Нужно в ваш svg файл поместить вот это перед открытием svg тега.</p>
-<pre><code class="language-html">&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;svg.css&quot; ?&gt;
-</code></pre>
-<p>Если вы это вставите в ваш html то страница не срендерится, если это будет в svg но svg вставляется как <img> или как фоновая картинка, страница отрисуется, svg тоже срендерится но стили эти работать не будут.</p>
-<p>##Data URI</p>
-<p>Еще один способ сжать максимально это сконвертировать svg в data uri. Можно это сделать <a href="http://www.mobilefish.com/services/base64/base64.php">специальным сервисом</a>. Кидаете туда содержимое вашего svg файла и получаете вот такой вот мусор. Не забудьте удалить переносы строк.</p>
-<p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/base64-data.png" alt="svg data uri" title="figure"></p>
-<p>Потом это можно вставлять во все варианты о которых мы говорили кроме конечно инлайновый svg, это просто не имеет смысла в данном случае. Этот код должен быть на месте <code>[data]</code>:</p>
-<p>###Картинка</p>
-<pre><code class="language-html">&lt;img src=&quot;data:image/svg+xml;base64,[data]&gt;
-</code></pre>
-<p>###CSS</p>
-<pre><code class="language-css">logo {
+&lt;/svg>
+</code></pre><h3>Внешние стили для <code>&lt;object></code></h3><p>Есть способ для указания внешних стилей что есть неплохо для кеширования. Это работает только для <code>&lt;object></code> содержащими svg файл, по крайней мере мои тесты показали так. Нужно в ваш svg файл поместить вот это перед открытием svg тега.</p><pre><code class="language-html">&lt;?xml-stylesheet type="text/css" href="svg.css" ?>
+</code></pre><p>Если вы это вставите в ваш html то страница не срендерится, если это будет в svg но svg вставляется как <img> или как фоновая картинка, страница отрисуется, svg тоже срендерится но стили эти работать не будут.</p><h2>Data URI</h2><p>Еще один способ сжать максимально это сконвертировать svg в data uri. Можно это сделать <a href="http://www.mobilefish.com/services/base64/base64.php">специальным сервисом</a>. Кидаете туда содержимое вашего svg файла и получаете вот такой вот мусор. Не забудьте удалить переносы строк.</p><p><img src="http://cdn.css-tricks.com/wp-content/uploads/2013/03/base64-data.png" alt="svg data uri" title="figure"></p><p>Потом это можно вставлять во все варианты о которых мы говорили кроме конечно инлайновый svg, это просто не имеет смысла в данном случае. Этот код должен быть на месте <code>[data]</code>:</p><h3>Картинка</h3><pre><code class="language-html">&lt;img src="data:image/svg+xml;base64,[data]>
+</code></pre><h3>CSS</h3><pre><code class="language-css">logo {
   background: url(data:image/svg+xml;base64,[data]);
 }
-</code></pre>
-<p>###Object</p>
-<pre><code class="language-html">&lt;object type=&quot;image/svg+xml&quot; data=&quot;data:image/svg+xml;base64,[data]&quot;&gt;
+</code></pre><h3>Object</h3><pre><code class="language-html">&lt;object type="image/svg+xml" data="data:image/svg+xml;base64,[data]">
   fallback
-&lt;/object&gt;
-</code></pre>
-<p>И - если у вас были вложенные стили <code>&lt;style&gt;</code>  в вашем svg перед тем как вы конвертировали это по прежнему будет работать в случае использования как <code>&lt;object&gt;</code>.</p>
-<p>##Полезные инструменты</p>
-<p> <strong><a href="https://github.com/filamentgroup/grunticon">grunticon</a></strong></p>
-<blockquote>
-<p>Берет папку с svg/png файлами (иконки сделанные в илюстраторе или типа того), и выводит ее в трех форматах: svg data uri, png data uri и таблицу стилей для совместимости с сылками на обычные картинки, которые тоже генерируются автоматически и выкладываются в отдельную папку.</p>
-</blockquote>
-<p> <strong><a href="https://github.com/jkphl/iconizr">iconizr</a></strong></p>
-<blockquote>
-<p>Консольный инструмент (PHP) для конвертирования svg картинок в набор иконок (svg &amp; png, отдельные иконки и / или спрайты) с поддержкой оптимизации и выходного формата в sass.</p>
-</blockquote>
-<p>##По теме</p>
-<ul>
-<li>David Bushell: <a href="http://dbushell.com/2013/02/04/a-primer-to-front-end-svg-hacking/">A Primer to Front-end SVG Hacking</a></li>
-<li>David Bushell: <a href="http://coding.smashingmagazine.com/2012/01/16/resolution-independence-with-svg/">Resolution Independence With SVG</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/SVG">MDN on SVG</a></li>
-<li>Browser support for <a href="http://caniuse.com/#search=svg">a variety of different SVG related things</a>.</li>
-<li>Peter Gasston: <a href="http://www.broken-links.com/2012/08/14/better-svg-sprites-with-fragment-identifiers/">Better SVG Sprites With Fragment Identifiers</a></li>
-<li>simuari: <a href="http://simurai.com/post/20251013889/svg-stacks">SVG Stacks</a></li>
-<li><a href="http://svgjs.com/">SVG.js</a> - &quot;A lightweight library for manipulating and animating SVG.&quot;</li>
-<li>Emmet has an <a href="http://docs.emmet.io/actions/base64/">awesome way</a> to get a data URI from an SVG right from your code editor.</li>
-<li>Compass <a href="http://compass-style.org/reference/compass/helpers/inline-data/">has a helper</a> for data URIs too.</li>
-<li>Adobe: <a href="http://blogs.adobe.com/webplatform/2013/01/08/svg-styling/">Styling SVG</a></li>
-<li>Andrew J. Baker: <a href="http://buildnewgames.com/taming-the-svg-beast/">Taming the SVG Beast</a></li>
-<li>Illustrator alternatives: <a href="http://inkscape.org/">Inkscape</a>, <a href="http://www.bohemiancoding.com/sketch/#4">Sketch</a></li>
-<li>Krister Kari: <a href="http://kristerkari.github.com/adventures-in-webkit-land/blog/2013/03/08/dealing-with-svg-images-in-mobile-browsers/">Dealing with SVG images in mobile browsers</a></li>
-</ul>
-					</div>
-					
-						<div class="l-space l-box l-line">
-	<div id="disqus_thread"></div>
-</div>
-
-<script>
-	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	var disqus_shortname = 'roocblog';
-	var disqus_identifier = 'using-svg-disqus';
-
-	/* * * DON'T EDIT BELOW THIS LINE * * */
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-
-<a href="http://disqus.com" class="dsq-brlink">
-	comments powered by 
-	<span class="logo-disqus">Disqus</span>
-</a>
-					
-				</div>
-				<div class="l-sidebar">
-					<div class="l-space-l l-box l-line" rel="recent">
-	<h5>Недавно</h5>
-	<ul class="list--simple t-size-s">
-		
-		
-		
-			
-				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
-			
-		
-			
-		
-			
-				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
-			
-		
-			
-				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
-			
-		
-			
-				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
-			
-		
-			
-				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
-			
-		
-	</ul>
-</div>
-
-<div class="l-space-l l-box l-line" rel="tags">
-	<h5>Теги</h5>
-	<ul class="list--tags t-size-s">
-		
-		
-			
-				
-					
-						
-					
-				
-					
-						
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-		<!-- tag listing -->
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-					
-				
-			
-			<li class="list--tags-item--active">
-				<a href="/tags/css.html">css</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/oocss.html">oocss</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-					
-				
-			
-			<li class="list--tags-item--active">
-				<a href="/tags/translation.html">translation</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-					
-				
-			
-			<li class="list--tags-item--active">
-				<a href="/tags/svg.html">svg</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/layout.html">layout</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/gradient.html">gradient</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/form.html">form</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/font.html">font</a>
-			</li>
-		
-	</ul>
-</div>
-
-<div class="l-space-l l-box l-line" rel="rss">
-	<h5>RSS</h5>
-	<ul class="list--simple t-size-s">
-		<li>
-			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
-		</li>
-		<li>
-			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
-		</li>
-	</ul>
-</div>
-
-
-				</div>
-			</div>
-			<div class="l-footer">
-	<div class="l-sitewidth">
-		<div class="l-space l-box l-line">
-			Блог веб разработчика. В вебе с 2000 года.
-			<a href="https://twitter.com/rooczebra/">Twitter</a>
-		</div>
-		<div class="l-space">
-			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
-		</div>
-	</div>
-</div>
-			
-				<script type="text/javascript">
-var disqus_shortname = 'roocblog';
-(function () {
-var s = document.createElement('script'); s.async = true;
-s.type = 'text/javascript';
-s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-				<script>
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-81406656-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-			
-		</div>
-		
-
-		<script src="/assets/js/bundle.js"></script>
-	</body>
-
-</html>
+&lt;/object>
+</code></pre><p>И - если у вас были вложенные стили <code>&lt;style></code> в вашем svg перед тем как вы конвертировали это по прежнему будет работать в случае использования как <code>&lt;object></code>.</p><h2>Полезные инструменты</h2><p><strong><a href="https://github.com/filamentgroup/grunticon">grunticon</a></strong></p><blockquote><p>Берет папку с svg/png файлами (иконки сделанные в илюстраторе или типа того), и выводит ее в трех форматах: svg data uri, png data uri и таблицу стилей для совместимости с сылками на обычные картинки, которые тоже генерируются автоматически и выкладываются в отдельную папку.</p></blockquote><p><strong><a href="https://github.com/jkphl/iconizr">iconizr</a></strong></p><blockquote><p>Консольный инструмент (PHP) для конвертирования svg картинок в набор иконок (svg & png, отдельные иконки и / или спрайты) с поддержкой оптимизации и выходного формата в sass.</p></blockquote><h2>По теме</h2><ul><li>David Bushell: <a href="http://dbushell.com/2013/02/04/a-primer-to-front-end-svg-hacking/">A Primer to Front-end SVG Hacking</a></li><li>David Bushell: <a href="http://coding.smashingmagazine.com/2012/01/16/resolution-independence-with-svg/">Resolution Independence With SVG</a></li><li><a href="https://developer.mozilla.org/en-US/docs/SVG">MDN on SVG</a></li><li>Browser support for <a href="http://caniuse.com/#search=svg">a variety of different SVG related things</a>.</li><li>Peter Gasston: <a href="http://www.broken-links.com/2012/08/14/better-svg-sprites-with-fragment-identifiers/">Better SVG Sprites With Fragment Identifiers</a></li><li>simuari: <a href="http://simurai.com/post/20251013889/svg-stacks">SVG Stacks</a></li><li><a href="http://svgjs.com/">SVG.js</a> - "A lightweight library for manipulating and animating SVG."</li><li>Emmet has an <a href="http://docs.emmet.io/actions/base64/">awesome way</a> to get a data URI from an SVG right from your code editor.</li><li>Compass <a href="http://compass-style.org/reference/compass/helpers/inline-data/">has a helper</a> for data URIs too.</li><li>Adobe: <a href="http://blogs.adobe.com/webplatform/2013/01/08/svg-styling/">Styling SVG</a></li><li>Andrew J. Baker: <a href="http://buildnewgames.com/taming-the-svg-beast/">Taming the SVG Beast</a></li><li>Illustrator alternatives: <a href="http://inkscape.org/">Inkscape</a>, <a href="http://www.bohemiancoding.com/sketch/#4">Sketch</a></li><li>Krister Kari: <a href="http://kristerkari.github.com/adventures-in-webkit-land/blog/2013/03/08/dealing-with-svg-images-in-mobile-browsers/">Dealing with SVG images in mobile browsers</a></li></ul></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>var disqus_shortname="roocblog",disqus_identifier="using-svg-disqus";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-space-l l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple t-size-s"><li><a href="/blog/no-preprocessors.html" class="t-link--sidebar">Почему я не использую препроцессоры</a></li><li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li><li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li></ul></div><div class="l-space-l l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags t-size-s"><li class="list--tags-item--active"><a href="/tags/css.html">css</a></li><li class="list--tags-item--active"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item--active"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-space-l l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple t-size-s"><li><a href="/posts.xml" class="t-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="t-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика. В вебе с 2000 года. <a href="https://twitter.com/rooczebra/">Twitter</a></div><div class="l-space">© Rooc 2014 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script>var disqus_shortname="roocblog";!function(){var e=document.createElement("script");e.async=!0,e.type="text/javascript",e.src="http://"+disqus_shortname+".disqus.com/count.js",(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(e)}()</script><script>!function(e,t,a,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=t.createElement(a),s=t.getElementsByTagName(a)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-81406656-1","auto"),ga("send","pageview")</script></div><script src="/assets/js/bundle.js"></script></body></html>

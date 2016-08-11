@@ -1,0 +1,1424 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"пре",
+				"препроцессоры"
+			],
+			[
+				"style",
+				"styleguide"
+			],
+			[
+				"browser",
+				"browser-sync"
+			],
+			[
+				"vab",
+				"va:bl	vertical-align:baseline"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"rep",
+				"replaceWith (fn)"
+			],
+			[
+				"tex",
+				"textStatus (?)"
+			],
+			[
+				"html",
+				"htmlcleaner (fn)"
+			],
+			[
+				"absol",
+				"absolute"
+			],
+			[
+				"if",
+				"if	if"
+			],
+			[
+				"la",
+				"lang	Attr"
+			],
+			[
+				"css",
+				"addClass"
+			],
+			[
+				"im",
+				"imageLoader"
+			],
+			[
+				"base",
+				"$base	$base-border"
+			],
+			[
+				"cur",
+				"cur	cursor: pointer"
+			],
+			[
+				"lh",
+				"line-height"
+			],
+			[
+				"font",
+				"fontsize"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					""
+				],
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					"All Syntaxes"
+				],
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					"Performance"
+				],
+				[
+					"Packages/Default/Syntax Tests.sublime-build",
+					"Regex Compatibility"
+				]
+			],
+			[
+				"Packages/Default/Syntax Tests.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"key",
+				"Keymaps: Cheat Sheet"
+			],
+			[
+				"quote",
+				"BracketHighlighter: Swap Quotes"
+			],
+			[
+				"branc",
+				"Git: Change Branch"
+			],
+			[
+				"new",
+				"Git: New Branch"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdown pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"lint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"upgrade",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"upg",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"cha",
+				"Git: Change Branch"
+			],
+			[
+				"change",
+				"Git: Change Branch"
+			],
+			[
+				"chang",
+				"Git: Change Branch"
+			],
+			[
+				"merge",
+				"Git: Merge Branch"
+			],
+			[
+				"snippet st",
+				"Snippet: styleguide"
+			],
+			[
+				"diff",
+				"Git: Diff Tool Current File"
+			],
+			[
+				"primer",
+				"CSSPrimer: Prime CSS from HTML file"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"sync",
+				"Package Syncing: Push Settings"
+			],
+			[
+				"ke",
+				"Keymaps: Find a keymap for..."
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"git conf",
+				"Git Conflict Resolver: Show Conflict Files"
+			],
+			[
+				"sublim",
+				"Sublimall: Upload"
+			],
+			[
+				"keym",
+				"Keymaps: Cheat Sheet"
+			],
+			[
+				"sublima",
+				"Sublimall: Upload"
+			],
+			[
+				"gulp",
+				"Gulp: Kill running tasks"
+			],
+			[
+				"liver",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"git che",
+				"Git: Checkout Current File"
+			],
+			[
+				"sublimall",
+				"Sublimall: Upload"
+			],
+			[
+				"todor",
+				"TodoReview: Project Files"
+			],
+			[
+				"to",
+				"TodoReview: Project and Open Files"
+			],
+			[
+				"todo",
+				"TodoReview: Project Files"
+			],
+			[
+				"specia",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"git check",
+				"Git: Checkout Current File"
+			],
+			[
+				"sublimal",
+				"Sublimall: Upload"
+			],
+			[
+				"fetch",
+				"Fetch: File"
+			],
+			[
+				"fet",
+				"Fetch: Manage"
+			],
+			[
+				"liverel",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"livere",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"livereloa",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"live",
+				"LiveReload: Enable/disable plug-ins"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"syntax jquery",
+				"Set Syntax: jQuery"
+			],
+			[
+				"white",
+				"Snippet: white-space: normal"
+			],
+			[
+				"coffee",
+				"Coffee: Compile File"
+			],
+			[
+				"git status",
+				"Git: Status"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git cimm",
+				"Git: Quick Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 536.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/rooc/Work/rooc.github.io"
+	],
+	"file_history":
+	[
+		"/home/rooc/Work/rooc.me/public/_inc/html/m-ga.ejs",
+		"/home/rooc/Work/rooc.me/public/blog/no-preprocessors.md",
+		"/home/rooc/Work/rooc.me/public/_inc/html/l-footer.ejs",
+		"/home/rooc/Work/rooc.me/public/blog/_data.json",
+		"/home/rooc/Work/rooc.me/public/_inc/css/elements/social.scss",
+		"/home/rooc/Work/rooc.me/public/_inc/css/elements/spinner.scss",
+		"/home/rooc/Work/rooc.me/public/_inc/css/elements/meta.scss",
+		"/home/rooc/Work/rooc.me/public/_inc/css/elements/icon.scss",
+		"/home/rooc/Work/rooc.me/public/_inc/css/elements/folio.scss",
+		"/home/rooc/Work/rooc.me/public/archive/_data.json",
+		"/home/rooc/Work/rooc.me/public/archive/_layout.ejs",
+		"/home/rooc/Work/rooc.me/public/_inc/css/core/base.scss",
+		"/home/rooc/Work/rooc.me/public/archive/index.ejs",
+		"/home/rooc/Work/rooc.me/public/blog/attribute-modules.md",
+		"/home/rooc/Work/rooc.me/public/tags/_layout.ejs",
+		"/home/rooc/Work/rooc.me/public/_inc/html/l-sidebar.ejs",
+		"/home/rooc/Work/rooc.me/public/_inc/js/main.js",
+		"/home/rooc/Work/rooc.me/public/_inc/js/plugins/filter.js",
+		"/home/rooc/Work/rooc.me/.eslintrc",
+		"/home/rooc/.config/sublime-text-3/Packages/BracketHighlighter/Example.sublime-keymap",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/rooc/Work/rooc.me/public/assets/js/bundle.js",
+		"/home/rooc/Work/rooc.me/out/archive/index.html",
+		"/home/rooc/Work/rooc.me/public/_inc/css/elements/code.scss",
+		"/home/rooc/Work/rooc.me/package.json",
+		"/home/rooc/Work/rooc.me/node_modules/prismjs/themes/prism.css",
+		"/home/rooc/Work/rooc.me/node_modules/prismjs/themes/prism-okaidia.css",
+		"/home/rooc/Work/rooc.me/node_modules/prismjs/themes/prism-funky.css",
+		"/home/rooc/Work/rooc.me/node_modules/prismjs/themes/prism-coy.css",
+		"/home/rooc/Work/rooc.me/public/_data.json",
+		"/home/rooc/Work/rooc.me/public/folio.xml.ejs",
+		"/home/rooc/Work/rooc.me/harp.json",
+		"/home/rooc/Work/rooc.me/public/_inc/html/l-nav.ejs",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Markdown.sublime-settings",
+		"/home/rooc/Work/rooc.me/public/blog/getting-old.md",
+		"/home/rooc/Work/rooc.me/public/blog/forms-styling.md",
+		"/home/rooc/Work/rooc.me/public/blog/code-styling.md",
+		"/home/rooc/Work/rooc.me/public/blog/buttons.md",
+		"/home/rooc/Work/rooc.me/public/blog/clip.md",
+		"/home/rooc/Work/rooc.me/public/blog/using-svg.md",
+		"/home/rooc/.config/sublime-text-3/Packages/MarkdownEditing/README.md",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Markdown Extended.sublime-settings",
+		"/home/rooc/Work/rooc.me/rooc.sublime-project",
+		"/home/rooc/.config/sublime-text-3/Packages/MarkdownEditing/Default (Linux).sublime-keymap",
+		"/home/rooc/Work/adaxes/public_html/js/frontend.js",
+		"/home/rooc/.config/sublime-text-3/Packages/SublimeLinter-contrib-stylelint/linter.py",
+		"/home/rooc/.config/sublime-text-3/Packages/User/scope_hunter.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/WakaTime.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Tern.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Gulp.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/CSScomb.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Autoprefixer.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/npm.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/SassBeautify.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Git.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Gist.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Emmet.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/ColorHighlighter.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/CSS Color Converter/colorconvert.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/CoffeeScript.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/bh_core.sublime-settings",
+		"/home/rooc/.config/sublime-text-3/Packages/User/Base File.sublime-settings",
+		"/home/rooc/Work/adaxes/stylelint.config.js",
+		"/home/rooc/Work/adaxes/package.json",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_button.scss",
+		"/usr/local/bin/stylelint",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/delegation.php",
+		"/home/rooc/Work/adaxes/.scss-lint.yml",
+		"/home/rooc/Work/adaxes/public_html/js/jquery/jquery.popup.js",
+		"/home/rooc/Downloads/default.css",
+		"/home/rooc/.config/sublime-text-3/Packages/TodoReview/TodoReview.sublime-settings",
+		"/home/rooc/Work/adaxes/protected/runtime/twig_cache/63/24/b2e777bd8d3bd9088fa7dc9f560c.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/web-interface.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/web-interface-customization.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/self-service.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/self-service-password-reset.php",
+		"/home/rooc/Work/adaxes/protected/views/helpers/rightmenu/demosBlock.php",
+		"/home/rooc/Work/adaxes/protected/views/info/pages/exchange_management-automation.php",
+		"/home/rooc/Work/adaxes/protected/views/info/pages/info_features.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/scheduled-tasks.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/role-based-security.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/provisioning.php",
+		"/home/rooc/Work/adaxes/protected/views/info/pages/office-365_automation_management.php",
+		"/home/rooc/Work/adaxes/protected/views/info/pages/info_whats-new_2011/1.php",
+		"/home/rooc/Work/adaxes/protected/views/site/index.twig",
+		"/home/rooc/Work/adaxes/protected/views/tutorials/ActiveDirectoryManagement/index.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/management.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/identity-management.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/help-desk-management.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/custom-commands.php",
+		"/home/rooc/Work/adaxes/protected/views/activedirectory/pages/automation.php",
+		"/home/rooc/Work/adaxes/public_html/js/jquery/jquery.popup.min.js",
+		"/home/rooc/Work/harp/.jshintrc",
+		"/home/rooc/Work/github/highlight.js/package.json",
+		"/home/rooc/Work/github/highlight.js/src/languages/powershell.js",
+		"/home/rooc/.config/sublime-text-3/Packages/rSnippets/Custom/styleguide.sublime-snippet",
+		"/home/rooc/Work/adaxes/public_html/js/libs/highlightjs/highlight.pack.js",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_field.scss",
+		"/home/rooc/.atom/packages/linter-scss-lint/lib/init.coffee",
+		"/home/rooc/Work/codewars/.atom-build.js",
+		"/home/rooc/Work/adaxes/protected/views/purchase/online_store.php",
+		"/home/rooc/Work/adaxes/protected/views/elements/form/purchase/purchaseForm.php",
+		"/home/rooc/Work/adaxes/protected/views/elements/form/purchase/purchaseForm_LicensePurchase.php",
+		"/home/rooc/Work/adaxes/protected/models/PurchaseForm.php",
+		"/home/rooc/Work/adaxes/public_html/css/sass/mixins/_igrid.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/mixins/_rhytm.scss",
+		"/home/rooc/Work/ikit/lib/elements/igrid/igrid.scss",
+		"/home/rooc/Work/adaxes/public_html/js/adaptive.js",
+		"/home/rooc/Work/adaxes/kss-config.json",
+		"/home/rooc/.bashrc",
+		"/home/rooc/Work/adaxes/public_html/css/styleguide-template/index.hbs",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_forms.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_lists.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_award.scss",
+		"/home/rooc/Work/adaxes/protected/views/site/_slider.twig",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_accordion.scss",
+		"/home/rooc/Work/adaxes/public_html/forum/styles/adaxes/theme/buttons.css",
+		"/home/rooc/Work/adaxes/protected/models/ScriptCategory.php",
+		"/home/rooc/Work/adaxes/public_html/css/styleguide-template/kss-assets/css/_kss-documentation.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_note.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/modules/_tutorials.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/core/_text.scss",
+		"/home/rooc/Work/adaxes/public_html/css/sass/core/text.html",
+		"/home/rooc/Work/adaxes/public_html/css/styles.css"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 107.0,
+		"where_history":
+		[
+			"*.php, *.twig",
+			"*.php",
+			"*.ejs",
+			"*.styl"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"alt shift q",
+			"quote",
+			"data-pop-type",
+			"jquery.popup.min.js",
+			"field--igrid",
+			"Package Type",
+			"field--igrid",
+			"award__header",
+			"list--cat",
+			"highlights",
+			"space",
+			"class=\"demobutton\"",
+			"demobutton",
+			"block",
+			"list--linear",
+			"list--simple",
+			"list--linear",
+			"list--orgs",
+			"class=\"list--orgs\"",
+			"class=\"keylist\"",
+			"keylist",
+			"484848",
+			"xml",
+			"grid",
+			"button",
+			"styleguide",
+			"downloads",
+			"box",
+			"_.",
+			"t-alpha",
+			"github",
+			"box",
+			"pricenote",
+			"beatify",
+			"alt shift",
+			"alt shift a",
+			"shift+alt+a",
+			"alt+shift+a",
+			"lodash",
+			"_",
+			"tabify",
+			"infobox",
+			"sidebar",
+			"[{|};]",
+			"[{|}|;]",
+			"language-",
+			"css",
+			"prism",
+			"loader",
+			"white",
+			"imgsrc",
+			"height",
+			"popup",
+			"dir",
+			"splice",
+			"expand_as_you_type",
+			"disable_tab_abbreviations",
+			"tab",
+			"popup",
+			"images/",
+			"document.",
+			"ctrl+shift+j",
+			"wrapper",
+			"$path + ",
+			"more",
+			"arrow",
+			"h3",
+			"grey",
+			"h3"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"5c5c5c",
+			"card",
+			"",
+			"hljs",
+			"img/",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 36.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.coffeecompile_output":
+	{
+		"height": 714.0
+	},
+	"output.exec":
+	{
+		"height": 344.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 283.0
+	},
+	"output.git-commit":
+	{
+		"height": 487.0
+	},
+	"output.git-pull":
+	{
+		"height": 420.0
+	},
+	"output.git-push":
+	{
+		"height": 355.0
+	},
+	"output.gulp_output":
+	{
+		"height": 441.0
+	},
+	"output.scope_viewer":
+	{
+		"height": 168.0
+	},
+	"output.scopehunter.results":
+	{
+		"height": 182.0
+	},
+	"pinned_build_system": "Packages/Default/Syntax Tests.sublime-build",
+	"project": "rooc-github.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"meta",
+				"public/_inc/css/elements/meta.scss"
+			],
+			[
+				"config",
+				"public/_inc/css/core/config.scss"
+			],
+			[
+				"base",
+				"public/_inc/css/core/base.scss"
+			],
+			[
+				"esl",
+				".eslintrc"
+			],
+			[
+				"layout",
+				"public/archive/_layout.ejs"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"har",
+				"harp.json"
+			],
+			[
+				"usin",
+				"public/blog/using-svg.md"
+			],
+			[
+				"front",
+				"public_html/js/frontend.js"
+			],
+			[
+				"button.scss",
+				"public_html/css/sass/modules/_button.scss"
+			],
+			[
+				"button",
+				"public_html/css/sass/modules/_button.scss"
+			],
+			[
+				"popupjs",
+				"public_html/js/jquery/jquery.popup.js"
+			],
+			[
+				"purchaseform",
+				"protected/models/PurchaseForm.php"
+			],
+			[
+				"store",
+				"protected/views/purchase/online_store.php"
+			],
+			[
+				"rhytm",
+				"public_html/css/sass/mixins/_rhytm.scss"
+			],
+			[
+				"rhy",
+				"public_html/css/sass/mixins/_rhytm.scss"
+			],
+			[
+				"igrid",
+				"public_html/css/sass/mixins/_igrid.scss"
+			],
+			[
+				"kss-con",
+				"kss-config.json"
+			],
+			[
+				"kss-doc",
+				"public_html/css/styleguide-template/kss-assets/css/_kss-documentation.scss"
+			],
+			[
+				"lists",
+				"public_html/css/sass/modules/_lists.scss"
+			],
+			[
+				"tutorials.scss",
+				"public_html/css/sass/modules/_tutorials.scss"
+			],
+			[
+				"note",
+				"public_html/css/sass/modules/_note.scss"
+			],
+			[
+				"text",
+				"public_html/css/sass/core/_text.scss"
+			],
+			[
+				"kss-hea",
+				"public_html/css/styleguide-template/kss-assets/css/_kss-header.scss"
+			],
+			[
+				"kss-title",
+				"public_html/styleguide/kss-assets/css/_kss-title.scss"
+			],
+			[
+				"kss-header",
+				"public_html/styleguide/kss-assets/css/_kss-header.scss"
+			],
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"grid",
+				"public_html/css/sass/modules/_grid.scss"
+			],
+			[
+				"kss-a",
+				"public_html/styleguide/kss-assets/css/_kss-adaxes.scss"
+			],
+			[
+				"base.scss",
+				"public_html/css/sass/core/_base.scss"
+			],
+			[
+				"kss-mark",
+				"public_html/styleguide/kss-assets/css/_kss-markdown.scss"
+			],
+			[
+				"kss-confi",
+				"kss-config.json"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"conf",
+				"config.js"
+			],
+			[
+				"gulp",
+				"gulpfile.js"
+			],
+			[
+				"main",
+				"protected/views/layouts/main.php"
+			],
+			[
+				"common.scss",
+				"public_html/css/sass/modules/_common.scss"
+			],
+			[
+				"gul",
+				"gulpfile.js"
+			],
+			[
+				"confi",
+				"config.js"
+			],
+			[
+				"core",
+				"public_html/css/sass/core.scss"
+			],
+			[
+				"config.js",
+				"config.js"
+			],
+			[
+				"docs",
+				"protected/views/support/pages/docs-articles.php"
+			],
+			[
+				"approva",
+				"protected/views/activedirectory/pages/approval.php"
+			],
+			[
+				"config.scss",
+				"public_html/css/sass/_config.scss"
+			],
+			[
+				"mater",
+				"public/materials.ejs"
+			],
+			[
+				"abou",
+				"public/about.ejs"
+			],
+			[
+				"togg",
+				"public/assets/js/libs/togglify.js"
+			],
+			[
+				"head",
+				"public/_inc/html/header.ejs"
+			],
+			[
+				"card",
+				"public/_inc/html/card.ejs"
+			],
+			[
+				"toggl",
+				"public/assets/js/libs/togglify.js"
+			],
+			[
+				"butt",
+				"public/_inc/css/elements/button.scss"
+			],
+			[
+				"icon",
+				"public/_inc/css/elements/icon.scss"
+			],
+			[
+				"field",
+				"public/_inc/css/elements/field.scss"
+			],
+			[
+				"layou",
+				"public/_inc/css/core/layout.scss"
+			],
+			[
+				"nav",
+				"public/_inc/css/elements/nav.scss"
+			],
+			[
+				"main.js",
+				"public/assets/js/main.js"
+			],
+			[
+				"basket",
+				"public/basket.ejs"
+			],
+			[
+				"side",
+				"public/_inc/html/sidebar.ejs"
+			],
+			[
+				"data",
+				"public/_data.json"
+			],
+			[
+				"shop",
+				"public/for-shops.ejs"
+			],
+			[
+				"dat",
+				"public/_data.json"
+			],
+			[
+				"for",
+				"public/for-shops.ejs"
+			],
+			[
+				"about",
+				"public/about.ejs"
+			],
+			[
+				"inter",
+				"public/internet-shops.ejs"
+			],
+			[
+				"desi",
+				"public/desiners.ejs"
+			],
+			[
+				"contac",
+				"public/contacts.ejs"
+			],
+			[
+				"fie",
+				"public/_inc/css/elements/field.scss"
+			],
+			[
+				"lay",
+				"public/_inc/css/core/layout.scss"
+			],
+			[
+				"footer",
+				"public/_inc/html/footer.ejs"
+			],
+			[
+				"brow",
+				"public/_inc/html/browsersync.ejs"
+			],
+			[
+				"style",
+				"public/_inc/css/styles.scss"
+			],
+			[
+				"pager",
+				"public/_inc/css/elements/pager.scss"
+			],
+			[
+				"tree",
+				"public/_inc/js/modules/treebuilder.js"
+			],
+			[
+				"toa",
+				"public/_inc/css/toastr.scss"
+			],
+			[
+				"html",
+				"public/_inc/js/modules/htmlcleaner.js"
+			],
+			[
+				"inde",
+				"public/index.ejs"
+			],
+			[
+				"toas",
+				"public/_inc/css/toastr.scss"
+			],
+			[
+				"grabe",
+				"public/_inc/js/modules/graber.js"
+			],
+			[
+				"tabs",
+				"public/_inc/css/modules/tabs.scss"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"ta",
+				"public/_inc/css/modules/tabs.scss"
+			],
+			[
+				"bundle",
+				"public/assets/js/bundle.js"
+			],
+			[
+				"bundl",
+				"public/assets/js/bundle.js"
+			],
+			[
+				"ind",
+				"public/index.ejs"
+			],
+			[
+				"js",
+				"js-scrapper/js/FileSaver.js"
+			],
+			[
+				"serve",
+				"server.js"
+			],
+			[
+				"optio",
+				"options.js"
+			],
+			[
+				"ball",
+				"public/_inc/css/modules/ball.scss"
+			],
+			[
+				"harp",
+				"_harp.json"
+			],
+			[
+				"modul",
+				"_module.ejs"
+			],
+			[
+				"temp",
+				"template-module.ejs"
+			],
+			[
+				"sett",
+				"_inc/css/core/settings.styl"
+			],
+			[
+				"code",
+				"_inc/css/modules/code.styl"
+			],
+			[
+				"pop",
+				"popup.ejs"
+			],
+			[
+				"con",
+				"_inc/css/core/content.styl"
+			],
+			[
+				"ba",
+				"_inc/css/core/base.styl"
+			],
+			[
+				"lis",
+				"_inc/css/modules/lists.styl"
+			],
+			[
+				"car",
+				"card.ejs"
+			],
+			[
+				"script",
+				"assets/js/scripts.js"
+			],
+			[
+				"hea",
+				"_inc/html/header.ejs"
+			],
+			[
+				"popu",
+				"lib/components/popup/popup.js"
+			],
+			[
+				"slider",
+				"lib/components/slider/slider.js"
+			],
+			[
+				"bas",
+				"_inc/css/core/base.styl"
+			],
+			[
+				"list",
+				"_inc/css/modules/lists.styl"
+			],
+			[
+				"firl",
+				"lib/modules/field/field-grid.ejs"
+			],
+			[
+				"spi",
+				"spinner.ejs"
+			],
+			[
+				"cont",
+				"_inc/css/core/content.styl"
+			],
+			[
+				"scrit",
+				"assets/js/scripts.js"
+			],
+			[
+				"popup",
+				"js/plugins/popup.coffee"
+			],
+			[
+				"dial",
+				"_inc/css/modules/dialog.styl"
+			],
+			[
+				"sideb",
+				"_inc/html/sidebar.ejs"
+			],
+			[
+				"404",
+				"404.ejs"
+			],
+			[
+				"dia",
+				"_inc/css/modules/dialog.styl"
+			],
+			[
+				"dialo",
+				"_inc/css/modules/dialog.styl"
+			],
+			[
+				"live",
+				"js/plugins/live.js"
+			],
+			[
+				"scrip",
+				"js/scripts.coffee"
+			],
+			[
+				"user",
+				"_inc/css/modules/user.styl"
+			],
+			[
+				"scri",
+				"js/scripts.coffee"
+			],
+			[
+				"index",
+				"index.ejs"
+			],
+			[
+				"git",
+				".gitignore"
+			],
+			[
+				"settin",
+				"src/partials/css/core/settings.styl"
+			],
+			[
+				"styl",
+				"src/partials/css/styles.styl"
+			],
+			[
+				"conten",
+				"src/partials/css/core/content.styl"
+			],
+			[
+				"content",
+				"src/documents/content.html.md"
+			],
+			[
+				"butto",
+				"src/partials/css/modules/button/button.styl"
+			],
+			[
+				"brea",
+				"src/partials/css/modules/breadcrumbs/breadcrumbs.styl"
+			],
+			[
+				"doc",
+				"docpad.coffee"
+			],
+			[
+				"box",
+				"src/documents/css/components/box.inc.styl"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ada",
+				"~/Work/adaxes/adaxes.sublime-project"
+			],
+			[
+				"word",
+				"~/Dropbox/Projects/Words/words.sublime-project"
+			],
+			[
+				"opr",
+				"~/Work/oprog-ide/oprog-ide.sublime-project"
+			],
+			[
+				"opro",
+				"~/Work/oprog-ide/oprog-ide.sublime-project"
+			],
+			[
+				"words",
+				"~/Dropbox/Projects/Words/words.sublime-project"
+			],
+			[
+				"wor",
+				"~/Dropbox/Projects/Words/words.sublime-project"
+			],
+			[
+				"dri",
+				"~/Work/drizzle/drizzle.sublime-project"
+			],
+			[
+				"code",
+				"~/Work/codewars/codewars.sublime-project"
+			],
+			[
+				"c",
+				"~/Work/codewars/codewars.sublime-project"
+			],
+			[
+				"fram",
+				"~/Work/framework/framework.sublime-project"
+			],
+			[
+				"",
+				"~/Work/8gund/8gund.sublime-workspace"
+			],
+			[
+				"rooc",
+				"~/Work/rooc.me/rooc.sublime-project"
+			],
+			[
+				"fra",
+				"~/Work/framework/framework.sublime-project"
+			],
+			[
+				"codew",
+				"~/Work/codewars/codewars.sublime-project"
+			],
+			[
+				"style",
+				"~/Work/styletopic/styletopic.sublime-project"
+			],
+			[
+				"rooc.me",
+				"~/Work/rooc.me/rooc.me.sublime-project"
+			],
+			[
+				"pro",
+				"~/Work/promkod/promkod.sublime-project"
+			],
+			[
+				"blog",
+				"~/Work/blog/rooc.sublime-project"
+			],
+			[
+				"frame",
+				"~/Work/framework/docs/framework-docs.sublime-project"
+			],
+			[
+				"sra",
+				"~/Work/sravnikupi/sravnikupi.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 106.0,
+		"last_filter": ".t-size-l",
+		"selected_items":
+		[
+			[
+				".t-size-l",
+				".t-size-l"
+			],
+			[
+				".l-ibl",
+				".l-iblock"
+			],
+			[
+				".table",
+				".table--data"
+			],
+			[
+				".button--the",
+				".button--theta"
+			],
+			[
+				"card__pri",
+				".card__pricenote"
+			],
+			[
+				"fcard__price",
+				".fcard__price"
+			],
+			[
+				"pricenote",
+				".card__pricenote"
+			],
+			[
+				".t-alpha",
+				".t-alpha"
+			],
+			[
+				".priv_de",
+				".priv__desc"
+			],
+			[
+				".l-ce",
+				".l-center"
+			],
+			[
+				"button--eps",
+				".button--eps"
+			],
+			[
+				"button--gamma",
+				".button--gamma"
+			],
+			[
+				"button--gamm",
+				".button--gamma"
+			],
+			[
+				"card__name",
+				".card__name"
+			],
+			[
+				"button--alpha",
+				".button--alpha"
+			],
+			[
+				"filter__sub",
+				".filter__subhead"
+			],
+			[
+				"label",
+				"label"
+			],
+			[
+				".filter__content",
+				".filter__content"
+			],
+			[
+				".list--filter",
+				".list--filters"
+			],
+			[
+				".filter__hea",
+				".filter__head"
+			],
+			[
+				".grid__cell--bnr",
+				".grid__cell--bnr"
+			],
+			[
+				"nav--stre",
+				".nav--stretched"
+			],
+			[
+				"button--si",
+				".button--simple"
+			],
+			[
+				"l-offs",
+				".l-offs"
+			],
+			[
+				"",
+				"clearfix"
+			]
+		],
+		"width": 708.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 400.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

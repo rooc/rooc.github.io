@@ -1,85 +1,8 @@
-<!DOCTYPE HTML>
-<html lang="ru">
-	
-	<head>
-	<meta charset="utf-8">
-	
-		
-	
-	
-	
-	<title>Rooc :: Блог :: Несколько способов верстки колонок</title>
-	<meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript">
-	<meta name="keywords" content="css верстка колонок разные способы примеры">
-	<meta name="author" content="rooc">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="/assets/img/favicon.png">
-	<link href='http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-
-	<body>
-		<div class="l-header">
-	<div class="l-sitewidth">
-		<a href="/" class="logo">Rooc</a>
-		<nav>
-	<ul class="nav">
-		
-		<li class="nav-item">
-			<a href="/">Блог</a>
-		</li>
-		
-		<li class="nav-item">
-			<a href="/archive/">Архив</a>
-		</li>
-		
-		<li class="nav-item">
-			<a href="/links/">Полезное</a>
-		</li>
-		
-	</ul>
-</nav>
-	</div>
-</div>
-		<div class="l-content">
-			<div class="l-sitewidth">
-				<div class="l-article">
-					<div class="l-space">
-						<div class="social">
-	<a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.async=true;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	<!-- <a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="icon-font--facebookSquared"></i></a> -->
-</div>
-						<h1>Несколько способов верстки колонок</h1>
-						<div class="meta">
-	<span class="meta-date">
-		Январь 22, 2012
-	</span>
-	&nbsp;||&nbsp;
-	<span class="meta-tags">
-		
-			
-			<a href="/tags/css.html">css</a>
-		
-			, 
-			<a href="/tags/layout.html">layout</a>
-		
-	</span>
-	
-	&nbsp;||&nbsp;
-	<span class="meta-comments">
-		<a href="#disqus_thread" data-disqus-identifier="grids-variants-disqus">комментарии</a>
-	</span>
-</div>
-						<h3>Метод float</h3><p>Не знаю как его назвать, пусть будет метод float.
-<!-- more --></p>
-<pre><code class="language-markup">&lt;div class=&quot;grid&quot;&gt;
-    &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<p><code>grid</code> – контейнер колонок, одновременно это решение проблемы схлопывания. <code>col</code> – колонка.</p>
-<pre><code class="language-css">*{
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><title>Rooc :: Блог :: Несколько способов верстки колонок</title><meta name="description" content="Блог веб-разработчика, front-end, CSS3, HTML, HTML5, javascript"><meta name="keywords" content="css верстка колонок разные способы примеры"><meta name="author" content="rooc"><meta name="viewport" content="width=device-width"><link rel="icon" href="/assets/img/favicon.png"><link href="http://fonts.googleapis.com/css?family=PT+Serif:400italic&subset=latin,cyrillic" rel="stylesheet"><link rel="stylesheet" href="/assets/css/styles.css"></head><body><div class="l-header"><div class="l-sitewidth"><a href="/" class="logo">Rooc</a><nav><ul class="nav"><li class="nav-item"><a href="/">Блог</a></li><li class="nav-item"><a href="/archive/">Архив</a></li><li class="nav-item"><a href="/links/">Полезное</a></li></ul></nav></div></div><div class="l-content"><div class="l-sitewidth"><div class="l-article"><div class="l-space"><div class="social"><a href="https://twitter.com/share" class="social-link" data-via="rooczebra" data-count="none"><i class="ifont--twitter"></i></a><script>!function(t,e,n){var r,s=t.getElementsByTagName(e)[0],a=/^http:/.test(t.location)?"http":"https";t.getElementById(n)||(r=t.createElement(e),r.id=n,r.async=!0,r.src=a+"://platform.twitter.com/widgets.js",s.parentNode.insertBefore(r,s))}(document,"script","twitter-wjs")</script></div><h1>Несколько способов верстки колонок</h1><div class="meta"><span class="meta-date">Январь 22, 2012 </span>||  <span class="meta-tags"><a href="/tags/css.html">css</a> , <a href="/tags/layout.html">layout</a> </span>||  <span class="meta-comments"><a href="#disqus_thread" data-disqus-identifier="grids-variants-disqus">комментарии</a></span></div><h3>Метод float</h3><p>Не знаю как его назвать, пусть будет метод float.</p><pre><code class="language-markup">&lt;div class="grid">
+    &lt;div class="col">&lt;/div>
+    &lt;div class="col">&lt;/div>
+&lt;/div>
+</code></pre><p><code>grid</code> – контейнер колонок, одновременно это решение проблемы схлопывания. <code>col</code> – колонка.</p><pre><code class="language-css">*{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -93,34 +16,29 @@
 
 .grid:before,
 .grid:after {
-    content: &quot;&quot;;
+    content: "";
     display: table;
 }
 .grid:after {
     clear: both;
 }
 
-.grid&gt;[class^=&quot;col-&quot;]{
+.grid>[class^="col-"]{
     float: left;
     margin:0 0 0 2.083%;
     padding: 0 10px;
 }
 
-.ie7 .grid&gt;[class^=&quot;col-&quot;]{
+.ie7 .grid>[class^="col-"]{
     margin:0 0 0 2.079%;
     display: inline;
     padding: 0;
 }
-</code></pre>
-<p>Хорошо известный способ, единственное о чем стоит сказать это о способе избавления от класса last в последней колонке.</p>
-<p>У <code>grid</code>есть левый отрицательный маржин: – 2.083%, такое значение не важно, в данном случае это 20px от ширины грида в 960px. Отрицательный маржин приводит к тому что сумма ширин вложенных элементов будет 102.083% и плюс колонка будет выступать слева на эту величину. Значит можно просто каждой колонке присвоить отступ такой же слева без всяких last, и маржин у первой колонки утопиться в этот наружный выступ.</p>
-<p><a href="http://examples.rooc.me/grid-no-last/index.html" title="button">пример</a></p>
-<h3>Колонки инлайновыми блоками</h3><pre><code class="language-markup">&lt;div class=&quot;grid-inline&quot;&gt;
-    &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="language-css">.grid-inline {
+</code></pre><p>Хорошо известный способ, единственное о чем стоит сказать это о способе избавления от класса last в последней колонке.</p><p>У <code>grid</code>есть левый отрицательный маржин: – 2.083%, такое значение не важно, в данном случае это 20px от ширины грида в 960px. Отрицательный маржин приводит к тому что сумма ширин вложенных элементов будет 102.083% и плюс колонка будет выступать слева на эту величину. Значит можно просто каждой колонке присвоить отступ такой же слева без всяких last, и маржин у первой колонки утопиться в этот наружный выступ.</p><p><a href="http://examples.rooc.me/grid-no-last/index.html" title="button">пример</a></p><h3>Колонки инлайновыми блоками</h3><pre><code class="language-markup">&lt;div class="grid-inline">
+    &lt;div class="col">&lt;/div>
+    &lt;div class="col">&lt;/div>
+&lt;/div>
+</code></pre><pre><code class="language-css">.grid-inline {
     letter-spacing: -.31em;
     word-spacing: -.43em;
     position: relative; }
@@ -133,22 +51,12 @@
 
 .ie7 .grid-inline .col { 
     display: inline; }
-</code></pre>
-<p><a href="http://examples.rooc.me/grid-inline/index.html" title="button">пример</a></p>
-<p>Проблема с инлайновыми блоками в том что между ними есть зазор величиной с пробел текущего шрифта, аналогично пробелу между словами, поэтому при помощи <code>letter-spacing: -.31em;</code>этот пробел обнуляется. Возможным минусом этого метода может быть то, что у какого-то шрифта этот пробел не будет равным 0.31em, но в любом случае можно либо подобрать нужное значение либо для грида использовать какой то другой шрифт.</p>
-<p><code>word-spacing: -.43em;</code> – это тоже лечение только для Opera.</p>
-<p>Плюс этого метода в том что не надо бороться с обрыванием float.</p>
-<p>Минус в том что обнуление зазора выглядит как то не надежно, ну что это за цифра “магическая” -0,31.</p>
-<p>И преджде чем применять этот метод стоит почитать <a href="http://habrahabr.ru/blogs/css/137656/">вот это</a>.</p>
-<p>На мой взгляд метод все равно интересный, я пока применяю его без использования отрицательных <code>letter-spacing</code> и <code>letter-spacing</code>, а просто делаю сумму ширин блоков меньше 100% и с запасом. Уж больно мне не нравится гемор с обрыванием float.</p>
-<h3>Метод Чикуенка</h3><p>Не знаю насколько этот метод правомочно называть методом Чикуенка ), но впервые я прочел о нем в его статье <a href="http://chikuyonok.ru/2010/01/liquid-site-markup/">Вёрстка растягивающихся сайтов</a>. Понял я его не сразу и пришлось какое то время чесать репу и экспериментировать, и хотя я его не использую часто но он очень интересный и решает кое какие проблемы. Обьяснять его я не буду, лучше всего для этого почитать его в оригинале, тем более что в нем есть важные детали которые надо понять прежде чем использовать. Приведу только кратко пример.</p>
-<pre><code class="language-markup">&lt;div class=&quot;page grid&quot;&gt;
-    &lt;div class=&quot;col content&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;col leftbar&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;col rightbar&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="language-css">.col {
+</code></pre><p><a href="http://examples.rooc.me/grid-inline/index.html" title="button">пример</a></p><p>Проблема с инлайновыми блоками в том что между ними есть зазор величиной с пробел текущего шрифта, аналогично пробелу между словами, поэтому при помощи <code>letter-spacing: -.31em;</code>этот пробел обнуляется. Возможным минусом этого метода может быть то, что у какого-то шрифта этот пробел не будет равным 0.31em, но в любом случае можно либо подобрать нужное значение либо для грида использовать какой то другой шрифт.</p><p><code>word-spacing: -.43em;</code> – это тоже лечение только для Opera.</p><p>Плюс этого метода в том что не надо бороться с обрыванием float.</p><p>Минус в том что обнуление зазора выглядит как то не надежно, ну что это за цифра “магическая” -0,31.</p><p>И преджде чем применять этот метод стоит почитать <a href="http://habrahabr.ru/blogs/css/137656/">вот это</a>.</p><p>На мой взгляд метод все равно интересный, я пока применяю его без использования отрицательных <code>letter-spacing</code> и <code>letter-spacing</code>, а просто делаю сумму ширин блоков меньше 100% и с запасом. Уж больно мне не нравится гемор с обрыванием float.</p><h3>Метод Чикуенка</h3><p>Не знаю насколько этот метод правомочно называть методом Чикуенка ), но впервые я прочел о нем в его статье <a href="http://chikuyonok.ru/2010/01/liquid-site-markup/">Вёрстка растягивающихся сайтов</a>. Понял я его не сразу и пришлось какое то время чесать репу и экспериментировать, и хотя я его не использую часто но он очень интересный и решает кое какие проблемы. Обьяснять его я не буду, лучше всего для этого почитать его в оригинале, тем более что в нем есть важные детали которые надо понять прежде чем использовать. Приведу только кратко пример.</p><pre><code class="language-markup">&lt;div class="page grid">
+    &lt;div class="col content">&lt;/div>
+    &lt;div class="col leftbar">&lt;/div>
+    &lt;div class="col rightbar">&lt;/div>
+&lt;/div>
+</code></pre><pre><code class="language-css">.col {
     float: left;
     position: relative;
     margin-right: -100%; }
@@ -173,19 +81,12 @@
 .ie7 .rightbar {
     padding: 0px;
     border: 0; }
-</code></pre>
-<p><a href="http://examples.rooc.me/grid-chic/index.html" title="button">пример</a></p>
-<p>Главное тут, на что надо обратить внимание для того чтобы понять, это стили col. <code>float: left</code> – “вынимает” блок из потока. <code>margin-right: -100%</code> – “затягивает” соседний блок так что он оказывается в “нуле” относительно родительского блока. А дальше из этой точки блоки расставляются в нужное место свойством <code>left</code>.</p>
-<p>Плюсы этого метода очевидные – во первых можно расставлять блоки в любой последовательности, и во вторых, что иногда очень важно – удаление любой колонки не затрагивает поведение других</p>
-<p>Это не все прелести метода, остальное стоит почитать в <a href="http://chikuyonok.ru/2010/01/liquid-site-markup/">оригинальной статье</a>.</p>
-<h3>Имитация абсолютного позиционирования</h3><p>Нечто похожее на предыдущий метод но с той разницей что изначально блоки ставятся в правый верхний угол а потом возвращаются на свои места. Этот метод подробно описан в статье <a href="http://www.alistapart.com/articles/fauxabsolutepositioning/">Faux Absolute Positioning</a>.</p>
-<pre><code class="language-markup">&lt;div class=&quot;grid&quot;&gt;
-    &lt;div class=&quot;content col&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;leftbar col&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;rightbar col&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-<pre><code class="language-css">.col {
+</code></pre><p><a href="http://examples.rooc.me/grid-chic/index.html" title="button">пример</a></p><p>Главное тут, на что надо обратить внимание для того чтобы понять, это стили col. <code>float: left</code> – “вынимает” блок из потока. <code>margin-right: -100%</code> – “затягивает” соседний блок так что он оказывается в “нуле” относительно родительского блока. А дальше из этой точки блоки расставляются в нужное место свойством <code>left</code>.</p><p>Плюсы этого метода очевидные – во первых можно расставлять блоки в любой последовательности, и во вторых, что иногда очень важно – удаление любой колонки не затрагивает поведение других</p><p>Это не все прелести метода, остальное стоит почитать в <a href="http://chikuyonok.ru/2010/01/liquid-site-markup/">оригинальной статье</a>.</p><h3>Имитация абсолютного позиционирования</h3><p>Нечто похожее на предыдущий метод но с той разницей что изначально блоки ставятся в правый верхний угол а потом возвращаются на свои места. Этот метод подробно описан в статье <a href="http://www.alistapart.com/articles/fauxabsolutepositioning/">Faux Absolute Positioning</a>.</p><pre><code class="language-markup">&lt;div class="grid">
+    &lt;div class="content col">&lt;/div>
+    &lt;div class="leftbar col">&lt;/div>
+    &lt;div class="rightbar col">&lt;/div>
+&lt;/div>
+</code></pre><pre><code class="language-css">.col {
     float: left;
     position: relative;
     left: 100%; }
@@ -204,472 +105,4 @@
     width: 16%;
     padding: 2%;
     margin-left: -20%; }
-</code></pre>
-<p><a href="http://examples.rooc.me/grid-faux-absolute/three-column-fluid.html" title="button">пример</a>
-<a href="http://examples.rooc.me/grid-faux-absolute/three-column-fluid-full.html" title="button">пример</a>
-<a href="http://examples.rooc.me/grid-faux-absolute/four-column-fluid.html" title="button">пример</a>
-<a href="http://examples.rooc.me/grid-faux-absolute/four-column-combined.html" title="button">пример</a></p>
-<p>Проблема с этим способом та же что и с предыдущим – зазоры между колонками которые появляются из за округления процентных значений. Зазоров нет только в Firefox.</p>
-<p>Решается это созданием дополнительной обертки для контейнера колонок</p>
-					</div>
-					
-						<div class="l-space l-box l-line">
-	<div id="disqus_thread"></div>
-</div>
-
-<script>
-	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	var disqus_shortname = 'roocblog';
-	var disqus_identifier = 'grids-variants-disqus';
-
-	/* * * DON'T EDIT BELOW THIS LINE * * */
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
-</script>
-
-<noscript>
-	Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
-
-<a href="http://disqus.com" class="dsq-brlink">
-	comments powered by 
-	<span class="logo-disqus">Disqus</span>
-</a>
-					
-				</div>
-				<div class="l-sidebar">
-					<div class="l-space-l l-box l-line" rel="recent">
-	<h5>Недавно</h5>
-	<ul class="list--simple t-size-s">
-		
-		
-		
-			
-				<li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li>
-			
-		
-			
-				<li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li>
-			
-		
-			
-				<li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li>
-			
-		
-			
-				<li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li>
-			
-		
-			
-				<li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li>
-			
-		
-			
-				<li><a href="/blog/todos.html" class="t-link--sidebar">Планировщики</a></li>
-			
-		
-	</ul>
-</div>
-
-<div class="l-space-l l-box l-line" rel="tags">
-	<h5>Теги</h5>
-	<ul class="list--tags t-size-s">
-		
-		
-			
-				
-					
-						
-					
-				
-					
-						
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-			
-				
-					
-				
-					
-						
-					
-				
-			
-		
-			
-				
-					
-				
-			
-		
-		<!-- tag listing -->
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-					
-				
-			
-			<li class="list--tags-item--active">
-				<a href="/tags/css.html">css</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/oocss.html">oocss</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/translation.html">translation</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/svg.html">svg</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-					
-				
-			
-			<li class="list--tags-item--active">
-				<a href="/tags/layout.html">layout</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/kak-to-tak.html">kak-to-tak</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/gradient.html">gradient</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/form.html">form</a>
-			</li>
-		
-			<!-- highlighting tags in current document -->
-			<!-- checking if current page is not tag page -->
-			
-			 
-				
-			
-			
-			
-				
-			
-			<li class="list--tags-item">
-				<a href="/tags/font.html">font</a>
-			</li>
-		
-	</ul>
-</div>
-
-<div class="l-space-l l-box l-line" rel="rss">
-	<h5>RSS</h5>
-	<ul class="list--simple t-size-s">
-		<li>
-			<a href="/posts.xml" class="t-link--sidebar">Блог</a>
-		</li>
-		<li>
-			<a href="/folio.xml" class="t-link--sidebar">Фолио</a>
-		</li>
-	</ul>
-</div>
-
-
-				</div>
-			</div>
-			<div class="l-footer">
-	<div class="l-sitewidth">
-		<div class="l-space l-box l-line">
-			Блог веб разработчика. В вебе с 2000 года.
-			<a href="https://twitter.com/rooczebra/">Twitter</a>
-		</div>
-		<div class="l-space">
-			&copy; Rooc 2014 | Никаких прав не защищено. Сделано на <a href='http://harpjs.com/'>Harpjs</a>
-		</div>
-	</div>
-</div>
-			
-				<script type="text/javascript">
-var disqus_shortname = 'roocblog';
-(function () {
-var s = document.createElement('script'); s.async = true;
-s.type = 'text/javascript';
-s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-}());
-</script>
-				<script>
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-81406656-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-			
-		</div>
-		
-
-		<script src="/assets/js/bundle.js"></script>
-	</body>
-
-</html>
+</code></pre><p><a href="http://examples.rooc.me/grid-faux-absolute/three-column-fluid.html" title="button">пример</a> <a href="http://examples.rooc.me/grid-faux-absolute/three-column-fluid-full.html" title="button">пример</a> <a href="http://examples.rooc.me/grid-faux-absolute/four-column-fluid.html" title="button">пример</a> <a href="http://examples.rooc.me/grid-faux-absolute/four-column-combined.html" title="button">пример</a></p><p>Проблема с этим способом та же что и с предыдущим – зазоры между колонками которые появляются из за округления процентных значений. Зазоров нет только в Firefox.</p><p>Решается это созданием дополнительной обертки для контейнера колонок</p></div><div class="l-space l-box l-line"><div id="disqus_thread"></div></div><script>var disqus_shortname="roocblog",disqus_identifier="grids-variants-disqus";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//"+disqus_shortname+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a></div><div class="l-sidebar"><div class="l-space-l l-box l-line" rel="recent"><h5>Недавно</h5><ul class="list--simple t-size-s"><li><a href="/blog/no-preprocessors.html" class="t-link--sidebar">Почему я не использую препроцессоры</a></li><li><a href="/blog/attribute-modules.html" class="t-link--sidebar">Модульный CSS и селекторы атрибутов</a></li><li><a href="/blog/using-svg.html" class="t-link--sidebar">Основы работы с SVG</a></li><li><a href="/blog/buttons.html" class="t-link--sidebar">Странный button</a></li><li><a href="/blog/oocss-utils.html" class="t-link--sidebar">OOCSS. Утилиты</a></li><li><a href="/blog/harpjs.html" class="t-link--sidebar">HarpJs</a></li></ul></div><div class="l-space-l l-box l-line" rel="tags"><h5>Теги</h5><ul class="list--tags t-size-s"><li class="list--tags-item--active"><a href="/tags/css.html">css</a></li><li class="list--tags-item"><a href="/tags/translation.html">translation</a></li><li class="list--tags-item"><a href="/tags/oocss.html">oocss</a></li><li class="list--tags-item"><a href="/tags/svg.html">svg</a></li><li class="list--tags-item--active"><a href="/tags/layout.html">layout</a></li><li class="list--tags-item"><a href="/tags/kak-to-tak.html">kak-to-tak</a></li><li class="list--tags-item"><a href="/tags/gradient.html">gradient</a></li><li class="list--tags-item"><a href="/tags/form.html">form</a></li><li class="list--tags-item"><a href="/tags/font.html">font</a></li></ul></div><div class="l-space-l l-box l-line" rel="rss"><h5>RSS</h5><ul class="list--simple t-size-s"><li><a href="/posts.xml" class="t-link--sidebar">Блог</a></li><li><a href="/folio.xml" class="t-link--sidebar">Фолио</a></li></ul></div></div></div><div class="l-footer"><div class="l-sitewidth"><div class="l-space l-box l-line">Блог веб разработчика. В вебе с 2000 года. <a href="https://twitter.com/rooczebra/">Twitter</a></div><div class="l-space">© Rooc 2014 | Никаких прав не защищено. Сделано на <a href="http://harpjs.com/">Harpjs</a></div></div></div><script>var disqus_shortname="roocblog";!function(){var e=document.createElement("script");e.async=!0,e.type="text/javascript",e.src="http://"+disqus_shortname+".disqus.com/count.js",(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(e)}()</script><script>!function(e,t,a,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=t.createElement(a),s=t.getElementsByTagName(a)[0],o.async=1,o.src=n,s.parentNode.insertBefore(o,s)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-81406656-1","auto"),ga("send","pageview")</script></div><script src="/assets/js/bundle.js"></script></body></html>
